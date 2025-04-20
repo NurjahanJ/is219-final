@@ -14,7 +14,7 @@ export const projects: Project[] = [
     title: "Dashboard UI",
     description: "A clean, responsive dashboard app built with modern React and Tailwind UI practices.",
     tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
-    github: "https://github.com/NurjahanJ/dashboard",
+    github: "https://github.com/NurjahanJ/dasboard",
     demo: "https://dasboard-wheat.vercel.app/"
   },
   // You can add more projects here as needed
