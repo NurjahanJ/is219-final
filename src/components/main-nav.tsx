@@ -30,8 +30,8 @@ export function MainNav() {
   }
 
   return (
-    <nav className="flex items-center justify-between w-full py-4 px-2 md:px-8 border-b border-border">
-      <Link href="/" className="text-xl font-semibold text-primary-700">
+    <nav className="flex items-center justify-between w-full py-4 px-2 md:px-8 border-b border-border" aria-label="Main navigation">
+      <Link href="/" className="text-xl font-semibold text-primary-700" aria-label="Explorer home page">
         Explorer
       </Link>
       
@@ -43,6 +43,7 @@ export function MainNav() {
             <Link 
               key={route.href} 
               href={route.href}
+              aria-current={active ? 'page' : undefined}
               className={`text-base font-medium transition-colors capitalize relative py-1 ${active 
                 ? 'text-primary-700 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary-500' 
                 : 'text-foreground hover:text-primary-600'}`}
@@ -57,8 +58,13 @@ export function MainNav() {
       <div className="md:hidden">
         <Sheet>
           <SheetTrigger asChild>
-            <button aria-label="Open menu" className="p-2 rounded-lg border border-border bg-background shadow-sm">
-              <Menu className="h-6 w-6" />
+            <button 
+              aria-label="Open menu" 
+              aria-expanded="false"
+              aria-haspopup="true"
+              className="p-2 rounded-lg border border-border bg-background shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+            >
+              <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
           </SheetTrigger>
           <SheetContent side="left" className="p-0 w-72 max-w-[90vw]">
@@ -72,7 +78,8 @@ export function MainNav() {
                   <Link
                     key={route.href}
                     href={route.href}
-                    className={`block w-full rounded-lg px-4 py-3 text-base font-medium text-left transition-colors ${active 
+                    aria-current={active ? 'page' : undefined}
+                    className={`block w-full rounded-lg px-4 py-3 text-base font-medium text-left transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${active 
                       ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-500' 
                       : 'hover:bg-muted focus:bg-muted text-foreground'}`}
                   >

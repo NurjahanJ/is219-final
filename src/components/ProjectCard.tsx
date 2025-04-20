@@ -18,11 +18,12 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
     <Card className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <CardHeader className="pb-3">
         <CardTitle className="text-xl md:text-2xl text-primary-700">{title}</CardTitle>
-        <div className="flex flex-wrap gap-2 mt-2">
+        <div className="flex flex-wrap gap-2 mt-2" aria-label="Project technologies">
           {tags.map((tag) => (
             <span 
               key={tag} 
-              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent-100 text-accent-800"
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent-100 text-accent-800 dark:bg-accent-800 dark:text-accent-100"
+              role="listitem"
             >
               {tag}
             </span>
@@ -40,10 +41,16 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
             asChild 
             variant="default" 
             size="sm" 
-            className="bg-primary-500 hover:bg-primary-600 text-white"
+            className="bg-primary-500 hover:bg-primary-600 text-white focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
-            <Link href={demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-              <ExternalLink className="mr-1 h-4 w-4" />
+            <Link 
+              href={demo} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center"
+              aria-label={`View ${title} demo`}
+            >
+              <ExternalLink className="mr-1 h-4 w-4" aria-hidden="true" />
               View Demo
             </Link>
           </Button>
@@ -53,10 +60,16 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
             asChild 
             variant="outline" 
             size="sm" 
-            className="border-primary-500 text-primary-700 hover:bg-primary-50"
+            className="border-primary-500 text-primary-700 hover:bg-primary-50 dark:hover:bg-primary-900 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
-            <Link href={github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
-              <Github className="mr-1 h-4 w-4" />
+            <Link 
+              href={github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center"
+              aria-label={`View ${title} GitHub repository`}
+            >
+              <Github className="mr-1 h-4 w-4" aria-hidden="true" />
               GitHub
             </Link>
           </Button>
