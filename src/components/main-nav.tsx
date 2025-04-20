@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { 
   DropdownMenu,
@@ -14,29 +14,43 @@ import { Menu, X } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
 export function MainNav() {
+  const pathname = usePathname()
+  
   const routes = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
   ]
+  
+  // Function to check if the route is active
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true
+    if (path !== "/" && pathname.startsWith(path)) return true
+    return false
+  }
 
   return (
-    <nav className="flex items-center justify-between w-full py-4 px-2 md:px-8">
+    <nav className="flex items-center justify-between w-full py-4 px-2 md:px-8 border-b border-border">
       <Link href="/" className="text-xl font-semibold text-primary-700">
-        Welcome
+        Explorer
       </Link>
       
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-6">
-        {routes.map((route) => (
-          <Link 
-            key={route.href} 
-            href={route.href}
-            className="text-base font-medium transition-colors hover:text-primary capitalize"
-          >
-            {route.label}
-          </Link>
-        ))}
+        {routes.map((route) => {
+          const active = isActive(route.href)
+          return (
+            <Link 
+              key={route.href} 
+              href={route.href}
+              className={`text-base font-medium transition-colors capitalize relative py-1 ${active 
+                ? 'text-primary-700 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary-500' 
+                : 'text-foreground hover:text-primary-600'}`}
+            >
+              {route.label}
+            </Link>
+          )
+        })}
       </div>
       
       {/* Mobile Navigation - NavDrawer */}
@@ -49,18 +63,23 @@ export function MainNav() {
           </SheetTrigger>
           <SheetContent side="left" className="p-0 w-72 max-w-[90vw]">
             <SheetHeader className="border-b px-6 py-4">
-              <SheetTitle className="text-lg font-semibold">Menu</SheetTitle>
+              <SheetTitle className="text-lg font-semibold text-primary-700">Explorer</SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-2 py-6 px-6">
-              {routes.map((route) => (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className="block w-full rounded-lg px-4 py-3 text-base font-medium text-left hover:bg-muted focus:bg-muted transition-colors"
-                >
-                  {route.label}
-                </Link>
-              ))}
+              {routes.map((route) => {
+                const active = isActive(route.href)
+                return (
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    className={`block w-full rounded-lg px-4 py-3 text-base font-medium text-left transition-colors ${active 
+                      ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-500' 
+                      : 'hover:bg-muted focus:bg-muted text-foreground'}`}
+                  >
+                    {route.label}
+                  </Link>
+                )
+              })}
             </nav>
           </SheetContent>
         </Sheet>
