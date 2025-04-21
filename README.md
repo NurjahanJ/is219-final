@@ -104,10 +104,6 @@ To make this portfolio your own:
 3. Customize the color theme in `tailwind.config.mjs` if desired
 4. Replace placeholder images with your own in the `public` directory
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ---
 
 Built with ❤️ using Next.js and the Explorer design system. Ready to embark on your next digital adventure!
