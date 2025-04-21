@@ -7,56 +7,56 @@ export default function Home() {
       <main className="container mx-auto space-y-16 pt-20 px-4">
         {/* Hero Section - Everyman Brand */}
         <div className="text-center space-y-6 max-w-[800px] mx-auto">
-          <h1 className="text-gradient-brand">
-            AI Solutions for Everyone
+          <h1 className="text-primary font-bold">
+            Explore the Possibilities
           </h1>
           <p className="text-lg text-medium-contrast max-w-2xl mx-auto">
-            We make AI approachable, practical, and accessible—helping people and organizations of all backgrounds solve real problems with confidence and clarity.
+            Discover innovative solutions that transform your digital landscape. We guide you through uncharted territories with expertise and vision.
           </p>
           <div className="flex gap-4 justify-center pt-4">
-            <Button size="lg" className="text-base bg-gradient-brand hover:opacity-90">
-              Get Started
+            <Button size="lg" className="text-base bg-primary hover:bg-primary-600 text-white">
+              Begin Your Journey
             </Button>
-            <Button variant="outline" size="lg" className="text-base border-primary-600 text-primary-700 hover:bg-primary-50">
-              See How We Can Help
+            <Button variant="outline" size="lg" className="text-base border-primary text-primary hover:bg-primary-50 dark:hover:bg-primary-900">
+              Explore Our Services
             </Button>
           </div>
         </div>
 
-        {/* Core Principles Section - Everyman Values */}
+        {/* Core Principles Section - Explorer Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
-          <Card className="border-l-4 border-l-primary-500">
+          <Card className="border-l-4 border-l-primary">
             <CardHeader>
-              <CardTitle className="text-primary-700">Honest Guidance</CardTitle>
-              <CardDescription>Clear advice you can trust</CardDescription>
+              <CardTitle className="text-primary">Adventure Guides</CardTitle>
+              <CardDescription>Navigate with confidence</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-medium-contrast">
-                We believe in open, honest communication—so you always know where you stand and how to move forward.
+                We chart the course through complex digital terrain, providing expert guidance to help you discover new possibilities and reach your destination.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-secondary-500">
+          <Card className="border-l-4 border-l-secondary">
             <CardHeader>
-              <CardTitle className="text-secondary-700">Practical Solutions</CardTitle>
-              <CardDescription>Real results for real people</CardDescription>
+              <CardTitle className="text-secondary">Innovative Pathfinders</CardTitle>
+              <CardDescription>Cutting-edge solutions</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-medium-contrast">
-                Our team focuses on what works for you—delivering solutions that are easy to understand, implement, and maintain.
+                Our team explores the frontiers of technology to create custom solutions that open new horizons and transform how you interact with the digital world.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-accent-500">
+          <Card className="border-l-4 border-l-accent">
             <CardHeader>
-              <CardTitle className="text-accent-700">Inclusive Support</CardTitle>
-              <CardDescription>Here for everyone, every step</CardDescription>
+              <CardTitle className="text-accent">Reliable Partners</CardTitle>
+              <CardDescription>Steadfast support on every journey</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-medium-contrast">
-                We’re committed to making technology accessible and helpful for all—no matter your background or experience.
+                We stand by your side throughout your expedition, providing dependable support and expertise to overcome challenges and celebrate victories.
               </p>
             </CardContent>
           </Card>
@@ -64,14 +64,14 @@ export default function Home() {
 
         {/* Invitation Section - Friendly Call to Action */}
         <div className="text-center space-y-8 py-16">
-          <h2 className="text-gradient-brand max-w-3xl mx-auto">
-            Ready to see what approachable AI can do for you?
+          <h2 className="text-primary font-semibold max-w-3xl mx-auto">
+            Ready to embark on your next digital adventure?
           </h2>
           <p className="text-lg text-medium-contrast max-w-2xl mx-auto">
-            Let’s work together to find practical, effective solutions that fit your needs. Everyone’s welcome.
+            Join us as we explore new frontiers and discover innovative solutions tailored to your unique journey.
           </p>
-          <Button size="lg" className="text-base bg-gradient-innovation hover:opacity-90">
-            Connect With Us
+          <Button size="lg" className="text-base bg-secondary text-text-dark hover:bg-secondary-600">
+            Start Your Expedition
           </Button>
         </div>
       </main>

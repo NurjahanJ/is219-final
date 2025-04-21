@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Montserrat } from "next/font/google";
 import { MainNav } from "@/components/main-nav";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
+      <body className={`${montserrat.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
         <MainNav />
         {children}
       </body>
