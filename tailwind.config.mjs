@@ -8,48 +8,71 @@ export default {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['Montserrat', 'sans-serif'],
+    },
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'Open Sans', 'Nunito', 'system-ui', 'sans-serif'],
-      },
       colors: {
-        // Everyman Brand Colors
+        // Explorer Brand Colors
         primary: {
-          50: '#f4f8fb',
-          100: '#e3eef7',
-          200: '#c7dff0',
-          300: '#a3cbe4',
-          400: '#7eb6d8',
-          500: '#4f8fcb', // Soft blue
-          600: '#3973a6',
-          700: '#2b567a',
-          800: '#1d384e',
-          900: '#0f1b23',
+          DEFAULT: '#2f4f4f', // Forest Green
+          50: '#e6eded',
+          100: '#cddcdc',
+          200: '#9bb9b9',
+          300: '#689696',
+          400: '#367373',
+          500: '#2f4f4f',
+          600: '#263f3f',
+          700: '#1c2f2f',
+          800: '#132020',
+          900: '#091010',
         },
         secondary: {
-          50: '#f6fbf8',
-          100: '#e6f6ec',
-          200: '#c3ebd6',
-          300: '#a0e0c0',
-          400: '#7bc47f', // Gentle green
-          500: '#5ea06a',
-          600: '#4a7e54',
-          700: '#355c3e',
-          800: '#213a28',
-          900: '#0c1812',
+          DEFAULT: '#87ceeb', // Sky Blue
+          50: '#f0f9fd',
+          100: '#e1f3fb',
+          200: '#c3e7f7',
+          300: '#a5dbf3',
+          400: '#87ceeb',
+          500: '#6ca5bc',
+          600: '#517c8d',
+          700: '#3d5d69',
+          800: '#283e46',
+          900: '#141f23',
         },
         accent: {
-          50: '#fdfaf6',
-          100: '#f7f2ea',
-          200: '#ede3d1',
-          300: '#e3d3b8',
-          400: '#d9c39f',
-          500: '#c2a97e', // Warm neutral
-          600: '#9b865f',
-          700: '#746340',
-          800: '#4d4021',
-          900: '#261d02',
+          DEFAULT: '#c2b280', // Sandstone
+          50: '#faf7f0',
+          100: '#f5efe1',
+          200: '#ebdfc3',
+          300: '#e2d0a5',
+          400: '#d8c087',
+          500: '#c2b280',
+          600: '#9b8e66',
+          700: '#746a4d',
+          800: '#4d4733',
+          900: '#26231a',
         },
+        background: {
+          DEFAULT: '#f9f9f7', // Off-white
+          50: '#ffffff',
+          100: '#fefefe',
+          200: '#fdfdfc',
+          300: '#fbfbfa',
+          400: '#fafaf8',
+          500: '#f9f9f7',
+          600: '#c7c7c6',
+          700: '#959594',
+          800: '#646463',
+          900: '#323231',
+          dark: '#1e1e1c', // Dark background for dark mode
+        },
+        text: {
+          dark: '#1a1a1a', // Charcoal
+          light: '#f9f9f7', // Off-white for dark mode
+          muted: '#6b7280', // Muted text color
+        },
+        // Keep neutral for compatibility
         neutral: {
           50: '#f9fafb',
           100: '#f3f4f6',
