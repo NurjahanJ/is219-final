@@ -14,8 +14,8 @@ export default function About() {
           
           {/* Name and Intro */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-gradient-brand text-4xl md:text-5xl font-bold mb-4">Jane Explorer</h1>
-            <h2 className="text-accent-500 text-xl md:text-2xl mb-6">Adventure Seeker & Web Developer</h2>
+            <h1 className="text-primary text-4xl md:text-5xl font-bold mb-4">Jane Explorer</h1>
+            <h2 className="text-accent text-xl md:text-2xl mb-6">Adventure Seeker & Web Developer</h2>
             <p className="text-lg text-medium-contrast mb-6">
               I'm passionate about exploring new technologies and creating immersive digital experiences. 
               With a background in both design and development, I bring a unique perspective to every project I undertake.
@@ -24,13 +24,13 @@ export default function About() {
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Link 
                 href="/projects" 
-                className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
                 View My Work
               </Link>
               <Link 
                 href="/" 
-                className="px-6 py-2 border border-primary-500 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                className="px-6 py-2 border border-primary text-primary rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
                 Back to Home
               </Link>
@@ -40,7 +40,7 @@ export default function About() {
         
         {/* My Journey Section */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-gradient-brand" id="journey">My Journey</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-primary" id="journey">My Journey</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Journey Card 1 */}
@@ -49,7 +49,7 @@ export default function About() {
                 <div className="p-3 bg-primary-100 rounded-full mr-4" aria-hidden="true">
                   <Compass className="h-8 w-8 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary-700">Discovery</h3>
+                <h3 className="text-xl font-semibold text-primary">Discovery</h3>
               </div>
               <p className="text-medium-contrast">
                 Started my journey in 2018, exploring the fundamentals of web development and design. Completed my degree in Computer Science with a focus on interactive media.
@@ -62,7 +62,7 @@ export default function About() {
                 <div className="p-3 bg-secondary-100 rounded-full mr-4" aria-hidden="true">
                   <Map className="h-8 w-8 text-secondary-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-700">Navigation</h3>
+                <h3 className="text-xl font-semibold text-secondary">Navigation</h3>
               </div>
               <p className="text-medium-contrast">
                 Worked with leading tech companies to develop innovative solutions. Led a team of developers in creating responsive, accessible web applications for diverse clients.
@@ -75,7 +75,7 @@ export default function About() {
                 <div className="p-3 bg-accent-100 rounded-full mr-4" aria-hidden="true">
                   <Mountain className="h-8 w-8 text-accent-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-accent-700">Summit</h3>
+                <h3 className="text-xl font-semibold text-accent">Summit</h3>
               </div>
               <p className="text-medium-contrast">
                 Currently focused on pushing boundaries with emerging technologies. Specializing in creating immersive experiences that combine stunning visuals with intuitive interactions.
@@ -88,10 +88,10 @@ export default function About() {
         
         {/* Footer Navigation */}
         <nav className="text-center pt-8 border-t border-border" aria-label="Footer navigation">
-          <Link href="/" className="text-primary-500 hover:text-primary-700 transition-colors mr-6 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 p-1 rounded">
+          <Link href="/" className="text-primary hover:text-primary-700 transition-colors mr-6 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 p-1 rounded">
             Home
           </Link>
-          <Link href="/projects" className="text-primary-500 hover:text-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 p-1 rounded">
+          <Link href="/projects" className="text-primary hover:text-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 p-1 rounded">
             Projects
           </Link>
         </nav>

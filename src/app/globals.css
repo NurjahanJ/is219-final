@@ -5,62 +5,62 @@
 @layer base {
   :root {
     /* Brand Typography Variables */
-    --font-sans: 'Montserrat', system-ui, sans-serif;
+    --font-sans: 'Montserrat', sans-serif;
     --line-height-body: 1.625;
     --tracking-heading-tight: -0.01em;
 
-    /* Explorer Archetype Colors in HSL */
-    --background: 180 20% 98%;
-    --foreground: 180 20% 25%;
+    /* Explorer Brand Colors in HSL */
+    --background: 60 20% 97%; /* Off-white */
+    --foreground: 0 0% 10%; /* Charcoal */
 
     --card: 0 0% 100%;
-    --card-foreground: 180 20% 25%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 180 20% 25%;
+    --popover-foreground: 0 0% 10%;
 
     --primary: 180 25% 25%; /* Forest Green */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 43 30% 63%; /* Sandstone */
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 197 74% 73%; /* Sky Blue */
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 180 20% 95%;
-    --muted-foreground: 180 15% 40%;
+    --muted: 60 20% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 197 74% 73%; /* Sky Blue */
-    --accent-foreground: 0 0% 20%;
+    --accent: 43 30% 63%; /* Sandstone */
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 70% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 180 20% 85%;
-    --input: 180 20% 85%;
+    --border: 60 20% 90%;
+    --input: 60 20% 90%;
     --ring: 180 25% 25%;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 210 80% 12%;
-    --foreground: 0 0% 100%;
-    --card: 210 70% 15%;
-    --card-foreground: 0 0% 100%;
-    --popover: 210 70% 15%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 180 25% 20%;
+    --background: 0 0% 12%; /* Dark background */
+    --foreground: 60 20% 97%; /* Off-white text */
+    --card: 0 0% 15%;
+    --card-foreground: 60 20% 97%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 60 20% 97%;
+    --primary: 180 25% 30%; /* Lighter Forest Green */
     --primary-foreground: 0 0% 100%;
-    --secondary: 43 30% 40%;
+    --secondary: 197 60% 50%; /* Lighter Sky Blue */
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 70% 20%;
-    --muted-foreground: 210 40% 70%;
-    --accent: 197 40% 40%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 43 30% 50%; /* Lighter Sandstone */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 40%;
     --destructive-foreground: 0 0% 100%;
-    --border: 210 70% 30%;
-    --input: 210 70% 30%;
-    --ring: 180 25% 20%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 180 25% 30%;
   }
 
   * {
@@ -102,15 +102,15 @@
 @layer utilities {
   /* Explorer Gradient Utilities */
   .bg-gradient-brand {
-    @apply bg-gradient-to-r from-primary-400 to-accent-300;
+    @apply bg-gradient-to-r from-primary-400 to-secondary-400;
   }
   
   .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-300;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-400;
   }
 
   .bg-gradient-innovation {
-    @apply bg-gradient-to-r from-secondary-400 to-accent-200;
+    @apply bg-gradient-to-r from-secondary-400 to-accent-400;
   }
 
   /* High-contrast text utilities for accessibility */

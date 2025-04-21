@@ -8,7 +8,7 @@ export default function Projects() {
       <main className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-gradient-brand text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
+          <h1 className="text-primary text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
           <p className="text-lg text-medium-contrast max-w-3xl mx-auto">
             Explore my latest work showcasing my skills in web development, design, and problem-solving.
             Each project represents a unique challenge and solution.  
@@ -41,13 +41,13 @@ export default function Projects() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link 
               href="/about" 
-              className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors shadow-md"
+              className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
               Learn More About Me
             </Link>
             <Link 
               href="/" 
-              className="px-6 py-2 border border-primary-500 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
+              className="px-6 py-2 border border-primary text-primary rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
               Back to Home
             </Link>

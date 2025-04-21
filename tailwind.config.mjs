@@ -8,59 +8,82 @@ export default {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['Montserrat', 'sans-serif'],
+    },
     extend: {
-      fontFamily: {
-        sans: ['Montserrat', 'system-ui', 'sans-serif'],
-      },
       colors: {
-        // Explorer Archetype Colors
+        // Explorer Brand Colors
         primary: {
-          50: '#e6f0f0',
-          100: '#cce1e1',
-          200: '#99c3c3',
-          300: '#66a5a5',
-          400: '#338787',
-          500: '#2f4f4f', // Forest Green
+          DEFAULT: '#2f4f4f', // Forest Green
+          50: '#e6eded',
+          100: '#cddcdc',
+          200: '#9bb9b9',
+          300: '#689696',
+          400: '#367373',
+          500: '#2f4f4f',
           600: '#263f3f',
           700: '#1c2f2f',
           800: '#132020',
           900: '#091010',
         },
         secondary: {
-          50: '#faf7f0',
-          100: '#f5efe1',
-          200: '#ebdfc3',
-          300: '#e2d0a5',
-          400: '#d8c087',
-          500: '#c2b280', // Sandstone
-          600: '#9b8e66',
-          700: '#746a4d',
-          800: '#4d4733',
-          900: '#26231a',
-        },
-        accent: {
+          DEFAULT: '#87ceeb', // Sky Blue
           50: '#f0f9fd',
           100: '#e1f3fb',
           200: '#c3e7f7',
           300: '#a5dbf3',
-          400: '#87ceeb', // Sky Blue
+          400: '#87ceeb',
           500: '#6ca5bc',
           600: '#517c8d',
           700: '#3d5d69',
           800: '#283e46',
           900: '#141f23',
         },
+        accent: {
+          DEFAULT: '#c2b280', // Sandstone
+          50: '#faf7f0',
+          100: '#f5efe1',
+          200: '#ebdfc3',
+          300: '#e2d0a5',
+          400: '#d8c087',
+          500: '#c2b280',
+          600: '#9b8e66',
+          700: '#746a4d',
+          800: '#4d4733',
+          900: '#26231a',
+        },
+        background: {
+          DEFAULT: '#f9f9f7', // Off-white
+          50: '#ffffff',
+          100: '#fefefe',
+          200: '#fdfdfc',
+          300: '#fbfbfa',
+          400: '#fafaf8',
+          500: '#f9f9f7',
+          600: '#c7c7c6',
+          700: '#959594',
+          800: '#646463',
+          900: '#323231',
+          dark: '#1e1e1c', // Dark background for dark mode
+        },
+        text: {
+          dark: '#1a1a1a', // Charcoal
+          light: '#f9f9f7', // Off-white for dark mode
+          muted: '#6b7280', // Muted text color
+        },
+        // Keep neutral for compatibility
         neutral: {
-          50: '#e6e8eb',
-          100: '#ccd1d7',
-          200: '#99a3af',
-          300: '#667587',
-          400: '#33475f',
-          500: '#001f3f', // Navy
-          600: '#001932',
-          700: '#001326',
-          800: '#000c19',
-          900: '#00060d',
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
         },
         // Semantic Colors
         success: {
