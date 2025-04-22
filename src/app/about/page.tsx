@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Compass, Map, Mountain } from "lucide-react";
+import { Compass, Code, Palette } from "lucide-react";
 
 export default function About() {
   return (
@@ -9,17 +9,17 @@ export default function About() {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-16">
           {/* Profile Photo - Using a placeholder */}
           <div className="relative w-48 h-48 md:w-64 md:h-64 overflow-hidden rounded-full border-4 border-primary-300 shadow-lg bg-primary-100 flex items-center justify-center" aria-hidden="true">
-            <div className="text-4xl md:text-5xl font-bold text-primary-500">JE</div>
+            <div className="text-4xl md:text-5xl font-bold text-primary-500">NJ</div>
           </div>
           
           {/* Name and Intro */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-primary text-4xl md:text-5xl font-bold mb-4">Jane Explorer</h1>
-            <h2 className="text-accent text-xl md:text-2xl mb-6">Adventure Seeker & Web Developer</h2>
+            <h1 className="text-primary text-4xl md:text-5xl font-bold mb-4">Nurjahan Jhorna</h1>
+            <h2 className="text-accent text-xl md:text-2xl mb-6">Web & Information Systems Student</h2>
             <p className="text-lg text-medium-contrast mb-6">
-              I'm passionate about exploring new technologies and creating immersive digital experiences. 
-              With a background in both design and development, I bring a unique perspective to every project I undertake.
-              When I'm not coding, you'll find me hiking mountains, exploring new places, or planning my next adventure.
+              I'm passionate about creating intuitive and visually appealing digital experiences through UX/UI design and web development. 
+              My academic journey has equipped me with a blend of technical skills and design thinking that I bring to every project.
+              I'm constantly exploring new technologies and design trends to enhance my creative toolkit.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Link 
@@ -37,6 +37,26 @@ export default function About() {
             </div>
           </div>
         </div>
+
+        {/* About Me Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-primary" id="about">About Me</h2>
+          
+          <div className="bg-card rounded-xl shadow-md p-8 border-l-4 border-l-primary-500">
+            <p className="text-medium-contrast mb-4">
+              As a Web & Information Systems student, I'm at an exciting point in my academic journey where theory meets practice. I'm particularly drawn to the intersection of design and functionality, where I can create digital experiences that are both beautiful and intuitive.
+            </p>
+            <p className="text-medium-contrast mb-4">
+              My academic projects have allowed me to develop a strong foundation in front-end technologies like HTML, CSS, JavaScript, and React. I enjoy the creative process of translating design concepts into responsive, accessible websites that provide meaningful user experiences.
+            </p>
+            <p className="text-medium-contrast mb-4">
+              I'm proficient with design tools like Figma, which I use to prototype and iterate on my ideas before implementation. This design-first approach helps me create cohesive experiences that balance aesthetics with usability.
+            </p>
+            <p className="text-medium-contrast">
+              I'm eager to collaborate, learn, and grow as a developer and designer. My goal is to continue expanding my skills while creating digital solutions that make a positive impact. I approach each project with curiosity and a growth mindset, always looking for opportunities to push my creative and technical boundaries.
+            </p>
+          </div>
+        </div>
         
         {/* My Journey Section */}
         <div className="mb-16">
@@ -49,10 +69,10 @@ export default function About() {
                 <div className="p-3 bg-primary-100 rounded-full mr-4" aria-hidden="true">
                   <Compass className="h-8 w-8 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary">Discovery</h3>
+                <h3 className="text-xl font-semibold text-primary">Education</h3>
               </div>
               <p className="text-medium-contrast">
-                Started my journey in 2018, exploring the fundamentals of web development and design. Completed my degree in Computer Science with a focus on interactive media.
+                Currently pursuing my degree in Web & Information Systems, where I'm building a strong foundation in both technical development and design principles. Each course expands my understanding of digital solutions.
               </p>
             </article>
             
@@ -60,12 +80,12 @@ export default function About() {
             <article className="bg-card rounded-xl shadow-md p-6 border-l-4 border-l-secondary-500 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-secondary-100 rounded-full mr-4" aria-hidden="true">
-                  <Map className="h-8 w-8 text-secondary-600" />
+                  <Code className="h-8 w-8 text-secondary-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary">Navigation</h3>
+                <h3 className="text-xl font-semibold text-secondary">Development</h3>
               </div>
               <p className="text-medium-contrast">
-                Worked with leading tech companies to develop innovative solutions. Led a team of developers in creating responsive, accessible web applications for diverse clients.
+                Focused on mastering modern web technologies including React, TypeScript, and Next.js. I've completed several academic projects that have strengthened my problem-solving abilities and technical implementation skills.
               </p>
             </article>
             
@@ -73,18 +93,76 @@ export default function About() {
             <article className="bg-card rounded-xl shadow-md p-6 border-l-4 border-l-accent-500 hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-accent-100 rounded-full mr-4" aria-hidden="true">
-                  <Mountain className="h-8 w-8 text-accent-600" />
+                  <Palette className="h-8 w-8 text-accent-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-accent">Summit</h3>
+                <h3 className="text-xl font-semibold text-accent">Design</h3>
               </div>
               <p className="text-medium-contrast">
-                Currently focused on pushing boundaries with emerging technologies. Specializing in creating immersive experiences that combine stunning visuals with intuitive interactions.
+                Developing my UX/UI design skills through coursework and self-directed learning. I'm passionate about creating user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my ideas to life.
               </p>
             </article>
           </div>
         </div>
         
-        {/* Skills or Additional Section could go here */}
+        {/* Skills Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-primary" id="skills">Skills & Tools</h2>
+          
+          <div className="bg-card rounded-xl shadow-md p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-primary mb-4">Development</h3>
+                <ul className="space-y-2 text-medium-contrast">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+                    HTML, CSS, JavaScript
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+                    React & Next.js
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+                    TypeScript
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+                    Responsive Web Design
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+                    Git Version Control
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-secondary mb-4">Design</h3>
+                <ul className="space-y-2 text-medium-contrast">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-secondary-500 rounded-full mr-2"></span>
+                    Figma
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-secondary-500 rounded-full mr-2"></span>
+                    UI/UX Design Principles
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-secondary-500 rounded-full mr-2"></span>
+                    Wireframing & Prototyping
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-secondary-500 rounded-full mr-2"></span>
+                    Visual Design
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-secondary-500 rounded-full mr-2"></span>
+                    Tailwind CSS
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         
         {/* Footer Navigation */}
         <nav className="text-center pt-8 border-t border-border" aria-label="Footer navigation">
