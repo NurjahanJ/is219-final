@@ -12,12 +12,17 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Dashboard UI",
-    description: "A clean, responsive dashboard app built with modern React and Tailwind UI practices.",
+    description: "A responsive dashboard built using Next.js and Tailwind CSS, with charts and data layout.",
     tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
     github: "https://github.com/NurjahanJ/dasboard",
     demo: "https://dasboard-wheat.vercel.app/"
   },
-  // You can add more projects here as needed
+  {
+    title: "Flutter Calculator",
+    description: "A simple but well-designed calculator app built using Flutter.",
+    tags: ["Flutter", "Dart", "Mobile UI"],
+    github: "https://github.com/NurjahanJ/flutter_calculator"
+  }
 ];
 
 // Helper function to get all unique tags across projects
