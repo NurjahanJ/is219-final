@@ -54,8 +54,8 @@ export function MainNav() {
 
   return (
     <nav className="flex items-center justify-between w-full py-4 px-2 md:px-8 border-b border-border" aria-label="Main navigation">
-      <Link href="/" className="text-xl font-semibold text-primary-700" aria-label="Explorer home page">
-        Explorer
+      <Link href="/" className="text-xl font-semibold text-primary-700" aria-label="Nurjahan Jhorna home page">
+        Nurjahan Jhorna
       </Link>
       
       {/* Desktop Navigation */}
@@ -93,7 +93,7 @@ export function MainNav() {
           </SheetTrigger>
           <SheetContent side="left" className="p-0 w-72 max-w-[90vw]">
             <SheetHeader className="border-b px-6 py-4">
-              <SheetTitle className="text-lg font-semibold text-primary-700">Explorer</SheetTitle>
+              <SheetTitle className="text-lg font-semibold text-primary-700">Nurjahan Jhorna</SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-2 py-6 px-6">
               {routes.map((route) => {
