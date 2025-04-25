@@ -122,6 +122,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Me Section - Scroll-based with 2-column layout */}
+      <section className="relative min-h-screen flex items-center px-4 py-16 md:py-24 z-10 bg-gradient-to-b from-background to-primary-50">
+        <div className="container mx-auto">
+          <h2 className="text-primary text-3xl md:text-4xl font-bold mb-16 text-center">About Me</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Photo Column */}
+            <div className="order-2 md:order-1 flex justify-center">
+              <div className="relative rounded-2xl overflow-hidden border-4 border-primary-200 shadow-xl w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                {/* Placeholder or actual image */}
+                <img 
+                  src="/profile-placeholder.jpg" 
+                  alt="Nurjahan Jhorna" 
+                  className="object-cover w-full h-full"
+                  onError={(e) => {
+                    // Fallback if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl font-bold text-primary-500 bg-primary-100 bg-opacity-80">
+                  NJ
+                </div>
+                
+                {/* Nature-inspired decorative elements */}
+                <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-accent-200 rounded-full opacity-20"></div>
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-secondary-300 rounded-full opacity-20"></div>
+              </div>
+            </div>
+            
+            {/* Content Column */}
+            <div className="order-1 md:order-2">
+              <div className="bg-white bg-opacity-70 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-primary-100 shadow-lg">
+                <h3 className="text-primary-700 text-2xl font-semibold mb-4">Nurjahan Jhorna</h3>
+                <p className="text-primary-800 font-medium mb-4">Web & Information Systems Student</p>
+                <p className="text-medium-contrast mb-6">
+                  I'm passionate about creating intuitive and visually appealing digital experiences that connect with users on a meaningful level. With a focus on thoughtful design and clean code, I craft solutions that are both beautiful and functional.
+                </p>
+                <p className="text-medium-contrast mb-6">
+                  My approach combines technical expertise with an explorer's mindset—always curious, always learning, and always seeking new paths to solve complex problems in elegant ways.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Next.js</span>
+                  <span className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-medium">React</span>
+                  <span className="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">TypeScript</span>
+                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">UI/UX Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
         {/* Core Principles Section - Explorer Values */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
