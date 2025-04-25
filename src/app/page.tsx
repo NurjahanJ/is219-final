@@ -4,6 +4,9 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ProjectsAnimation } from "@/components/ProjectsAnimation";
+import { projects } from "@/lib/projects";
+import { Compass, Code, Palette } from "lucide-react";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -91,7 +94,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen pt-16 md:pt-20">
       {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -100,18 +103,25 @@ export default function Home() {
       />
 
       {/* Fullscreen Hero Section */}
-      <section className="relative h-screen flex items-center justify-center px-4 z-10">
+      <section className="relative h-screen flex items-center justify-center px-4 z-10 bg-gradient-to-b from-slate-50 to-indigo-50 dark:from-slate-900 dark:to-indigo-950">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          <h1 className="text-primary text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-            Designing Meaningful <br className="hidden md:block" />
-            Digital Experiences
-          </h1>
-          <p className="text-lg md:text-xl text-medium-contrast max-w-2xl mx-auto">
-            Navigating the digital landscape with creativity and purpose. I craft intuitive interfaces and engaging experiences that connect, inspire, and deliver results.
-          </p>
+          <div className="mb-6">
+            <span className="inline-block px-4 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-sm font-medium mb-4">Web & Information Systems</span>
+          </div>
+          <div className="max-w-3xl mx-auto text-center pb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-700 dark:from-indigo-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-6">
+              Nurjahan Jhorna
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8">
+              UX Designer & Frontend Developer
+            </p>
+            <p className="text-lg text-slate-700 dark:text-slate-300 mb-8">
+              Guiding the digital journey with clarity and insight. I create thoughtful interfaces and knowledge-rich experiences that educate, illuminate, and inspire understanding.
+            </p>
+          </div>
           <div className="pt-8">
-            <Button asChild size="lg" className="text-base bg-primary hover:bg-primary-600 text-white shadow-lg transition-all duration-300 hover:scale-105">
-              <Link href="/projects">Explore My Work</Link>
+            <Button asChild size="lg" className="text-base bg-indigo-700 hover:bg-indigo-800 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white shadow-md transition-all duration-300">
+              <Link href="/#projects">Explore My Work</Link>
             </Button>
           </div>
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -122,61 +132,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Me Section - Scroll-based with 2-column layout */}
-      <section className="relative min-h-screen flex items-center px-4 py-16 md:py-24 z-10 bg-gradient-to-b from-background to-primary-50">
-        <div className="container mx-auto">
-          <h2 className="text-primary text-3xl md:text-4xl font-bold mb-16 text-center">About Me</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-            {/* Photo Column */}
-            <div className="order-2 md:order-1 flex justify-center">
-              <div className="relative rounded-2xl overflow-hidden border-4 border-primary-200 shadow-xl w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
-                {/* Placeholder or actual image */}
-                <img 
-                  src="/profile-placeholder.jpg" 
-                  alt="Nurjahan Jhorna" 
-                  className="object-cover w-full h-full"
-                  onError={(e) => {
-                    // Fallback if image fails to load
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl font-bold text-primary-500 bg-primary-100 bg-opacity-80">
-                  NJ
-                </div>
-                
-                {/* Nature-inspired decorative elements */}
-                <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-accent-200 rounded-full opacity-20"></div>
-                <div className="absolute -top-2 -left-2 w-16 h-16 bg-secondary-300 rounded-full opacity-20"></div>
-              </div>
-            </div>
-            
-            {/* Content Column */}
-            <div className="order-1 md:order-2">
-              <div className="bg-white bg-opacity-70 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-primary-100 shadow-lg">
-                <h3 className="text-primary-700 text-2xl font-semibold mb-4">Nurjahan Jhorna</h3>
-                <p className="text-primary-800 font-medium mb-4">Web & Information Systems Student</p>
-                <p className="text-medium-contrast mb-6">
-                  I'm passionate about creating intuitive and visually appealing digital experiences that connect with users on a meaningful level. With a focus on thoughtful design and clean code, I craft solutions that are both beautiful and functional.
-                </p>
-                <p className="text-medium-contrast mb-6">
-                  My approach combines technical expertise with an explorer's mindset—always curious, always learning, and always seeking new paths to solve complex problems in elegant ways.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">Next.js</span>
-                  <span className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-medium">React</span>
-                  <span className="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">TypeScript</span>
-                  <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">UI/UX Design</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
-
+        {/* My Journey Section */}
+        <section id="journey" className="py-16">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px w-12 bg-indigo-300 mr-4"></div>
+              <h2 className="text-indigo-900 dark:text-indigo-300 text-3xl md:text-4xl font-serif mb-6">My Journey</h2>
+              <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+            </div>
+            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-light">
+              The path of knowledge that has shaped my understanding and perspective in the digital realm.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-indigo-600 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-full text-indigo-700 dark:text-indigo-300">
+                  <Compass className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-medium text-indigo-800 dark:text-indigo-300 font-serif">Education</h3>
+              </div>
+              <p className="text-slate-700 leading-relaxed">
+                Currently pursuing a degree in Web & Information Systems, where I'm building a strong foundation in both the technical and design aspects of web development. My coursework includes UX design principles, web programming, and information architecture.  
+              </p>
+            </article>
+            
+            {/* Development Card */}
+            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-purple-600 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-full text-purple-700 dark:text-purple-300">
+                  <Code className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-medium text-purple-800 dark:text-purple-300 font-serif">Development</h3>
+              </div>
+              <p className="text-slate-700 leading-relaxed">
+                Continuously expanding my development skills through hands-on projects and self-directed learning. I'm proficient in HTML, CSS, JavaScript, and React, and I'm always exploring new technologies to add to my toolkit. I enjoy the problem-solving aspect of coding and the satisfaction of building functional, responsive websites.
+              </p>
+            </article>
+            
+            {/* Design Card */}
+            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-slate-600 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded-full text-slate-700 dark:text-slate-300">
+                  <Palette className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-800 dark:text-slate-300 font-serif">Design</h3>
+              </div>
+              <p className="text-slate-700 leading-relaxed">
+                Developing my UX/UI design skills through coursework and self-directed learning. I'm passionate about creating user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my ideas to life.
+              </p>
+            </article>
+          </div>
+        </section>
+        
+        {/* Projects Section */}
+        <section id="projects" className="py-16 md:py-24 bg-slate-100 dark:bg-slate-800">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px w-12 bg-indigo-300 mr-4"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-indigo-800 dark:text-indigo-300">My Playground</h2>
+              <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+            </div>
+            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-light mb-12">
+              Discover my collection of works that demonstrate my approach to problem-solving and knowledge application.
+            </p>
+          </div>
+          
+          <ProjectsAnimation projects={projects} />
+        </section>
       </main>
     </div>
   );
