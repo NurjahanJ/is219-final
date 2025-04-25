@@ -20,6 +20,7 @@ export function MainNav() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" },
   ]
   
   // Function to check if the route is active
