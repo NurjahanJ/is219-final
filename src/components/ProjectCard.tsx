@@ -14,30 +14,32 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ title, description, tags, github, demo }: ProjectCardProps) {
-  // Function to determine tag color based on tag name
+  // Function to determine tag color based on tag name - using Sage archetype colors
   const getTagColor = (tag: string) => {
     const tagLower = tag.toLowerCase();
     if (tagLower.includes('next') || tagLower.includes('react')) {
-      return 'bg-secondary-100 text-secondary-800 dark:bg-secondary-800 dark:text-secondary-100';
+      return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200';
     } else if (tagLower.includes('tailwind') || tagLower.includes('css')) {
-      return 'bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-100';
+      return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
     } else if (tagLower.includes('chart') || tagLower.includes('vercel')) {
-      return 'bg-accent-100 text-accent-800 dark:bg-accent-800 dark:text-accent-100';
+      return 'bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-200';
     } else if (tagLower.includes('flutter') || tagLower.includes('dart')) {
-      return 'bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100';
+      return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
+    } else if (tagLower.includes('mobile')) {
+      return 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200';
     } else {
-      return 'bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100';
+      return 'bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200';
     }
   };
 
   return (
-    <Card className="flex flex-col h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border-t-4 border-t-primary-400 group">
+    <Card className="flex flex-col h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border-l-4 border-l-indigo-600 dark:border-l-indigo-400 group bg-white dark:bg-slate-800">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
-          <CardTitle className="text-xl md:text-2xl text-primary-700 group-hover:text-primary-600 transition-colors">
+          <CardTitle className="text-xl md:text-2xl text-indigo-800 dark:text-indigo-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-200 transition-colors font-serif">
             {title}
           </CardTitle>
-          <div className="p-2 rounded-full bg-primary-50 text-primary-500 group-hover:bg-primary-100 transition-colors">
+          <div className="p-2 rounded-full bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-800/60 transition-colors">
             <Folder className="h-5 w-5" aria-hidden="true" />
           </div>
         </div>
@@ -54,17 +56,17 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
         </div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <CardDescription className="text-medium-contrast text-sm md:text-base">
+        <CardDescription className="text-slate-700 dark:text-slate-300 text-sm md:text-base font-light leading-relaxed">
           {description}
         </CardDescription>
       </CardContent>
-      <CardFooter className="flex flex-wrap gap-3 pt-4 border-t border-border">
+      <CardFooter className="flex flex-wrap gap-3 pt-4 border-t border-slate-200 dark:border-slate-700">
         {demo && (
           <Button 
             asChild 
             variant="default" 
             size="sm" 
-            className="bg-primary-500 hover:bg-primary-600 text-white focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+            className="bg-indigo-700 hover:bg-indigo-800 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
           >
             <Link 
               href={demo} 
@@ -83,7 +85,7 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
             asChild 
             variant="outline" 
             size="sm" 
-            className="border-primary-500 text-primary-700 hover:bg-primary-50 dark:hover:bg-primary-900 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+            className="border-indigo-500 dark:border-indigo-400 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
           >
             <Link 
               href={github} 

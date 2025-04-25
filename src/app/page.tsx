@@ -195,10 +195,9 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-indigo-800 dark:text-indigo-300">My Playground</h2>
               <div className="h-px w-12 bg-indigo-300 ml-4"></div>
             </div>
-            <p className="text-lg text-slate-700 max-w-3xl mx-auto font-light">
+            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-light mb-12">
               Discover my collection of works that demonstrate my approach to problem-solving and knowledge application.
             </p>
-            <ProjectsAnimation projects={projects} />
           </div>
           
           <ProjectsAnimation projects={projects} />
