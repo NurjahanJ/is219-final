@@ -16,10 +16,32 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 export function MainNav() {
   const pathname = usePathname()
   
+  // Handle smooth scrolling for anchor links
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only apply to hash links on the same page
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      
+      // If we're not on the home page, navigate first
+      if (pathname !== '/') {
+        window.location.href = href;
+        return;
+      }
+      
+      // Extract the id from the href
+      const id = href.substring(2);
+      const element = document.getElementById(id);
+      
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+  
   const routes = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
+    { href: "/#projects", label: "Projects" },
     { href: "/contact", label: "Contact" },
   ]
   
@@ -44,6 +66,7 @@ export function MainNav() {
             <Link 
               key={route.href} 
               href={route.href}
+              onClick={(e) => handleAnchorClick(e, route.href)}
               aria-current={active ? 'page' : undefined}
               className={`text-base font-medium transition-colors capitalize relative py-1 ${active 
                 ? 'text-primary-700 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary-500' 
@@ -79,6 +102,7 @@ export function MainNav() {
                   <Link
                     key={route.href}
                     href={route.href}
+                    onClick={(e) => handleAnchorClick(e, route.href)}
                     aria-current={active ? 'page' : undefined}
                     className={`block w-full rounded-lg px-4 py-3 text-base font-medium text-left transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${active 
                       ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-500' 

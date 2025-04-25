@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ProjectsAnimation } from "@/components/ProjectsAnimation";
+import { projects } from "@/lib/projects";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -176,7 +178,17 @@ export default function Home() {
       </section>
 
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
-
+        {/* Projects Section */}
+        <section id="projects" className="py-16">
+          <div className="text-center mb-16">
+            <h2 className="text-primary text-3xl md:text-4xl font-bold mb-6">My Projects</h2>
+            <p className="text-lg text-medium-contrast max-w-3xl mx-auto">
+              Explore my latest work showcasing my skills in web development, design, and problem-solving.
+            </p>
+          </div>
+          
+          <ProjectsAnimation projects={projects} />
+        </section>
       </main>
     </div>
   );
