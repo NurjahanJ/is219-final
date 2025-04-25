@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
-import { Github, Linkedin, Mail, Send, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, Send, BookOpen, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -64,17 +64,25 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-primary-50 px-4 py-12 md:py-20">
-      <main className="container mx-auto max-w-5xl">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-indigo-50 px-4 py-12 md:py-20 pt-16 md:pt-24 relative">
+      {/* Decorative background elements */}
+      <div className="absolute top-1/4 right-1/4 bg-indigo-100 w-32 h-32 rounded-full opacity-20" aria-hidden="true"></div>
+      <div className="absolute bottom-1/3 left-1/3 bg-purple-100 w-24 h-24 rounded-full opacity-10" aria-hidden="true"></div>
+      
+      <main className="container mx-auto max-w-5xl relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-2 bg-primary-100 rounded-full mb-4">
-            <Mail className="h-6 w-6 text-primary-600" aria-hidden="true" />
+          <div className="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-full mb-4">
+            <MessageSquare className="h-6 w-6 text-indigo-700" aria-hidden="true" />
           </div>
-          <h1 className="text-primary text-4xl md:text-5xl font-bold mb-6">Let's Connect</h1>
-          <p className="text-lg text-medium-contrast max-w-2xl mx-auto">
-            I'm always open to collaborating, learning, or chatting about UX and web design. 
-            Let's build something meaningful together.
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-px w-12 bg-indigo-300 mr-4"></div>
+            <h1 className="text-indigo-900 text-4xl md:text-5xl font-serif mb-2">Let's Connect</h1>
+            <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+          </div>
+          <p className="text-lg text-slate-700 max-w-2xl mx-auto font-light leading-relaxed">
+            I'm always open to thoughtful discussions, sharing knowledge, and exploring ideas about UX and web design. 
+            Let's collaborate on creating meaningful digital experiences that illuminate and educate.
           </p>
         </div>
 
@@ -82,41 +90,39 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Methods Column */}
           <div className="order-2 lg:order-1">
-            <Card className="border-l-4 border-l-primary shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+            <Card className="border-l-4 border-l-indigo-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white">
               <CardHeader>
-                <CardTitle className="text-primary-700 text-2xl">Contact Methods</CardTitle>
-                <CardDescription>
-                  Connect with me through these platforms or send a direct message.
+                <CardTitle className="text-indigo-800 text-2xl font-serif">Connect & Discuss</CardTitle>
+                <CardDescription className="text-slate-600 font-light">
+                  Reach out through these platforms to start a meaningful conversation.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                {/* GitHub Button */}
+                {/* Email Button */}
                 <a 
-                  href="https://github.com/NurjahanJ" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg bg-primary-50 hover:bg-primary-100 transition-colors duration-300 group"
-                  aria-label="Visit my GitHub profile"
+                  href="mailto:nurjahan.jhorna@example.com" 
+                  className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
+                  aria-label="Send me an email"
                 >
                   <div className="p-3 bg-white rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Github className="h-6 w-6 text-primary-700" aria-hidden="true" />
+                    <Mail className="h-6 w-6 text-slate-700" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-primary-800">GitHub</h3>
-                    <p className="text-sm text-primary-600">View my code repositories</p>
+                    <h3 className="font-medium text-primary-800">Email</h3>
+                    <p className="text-sm text-primary-600">Send me a message</p>
                   </div>
                 </a>
 
                 {/* LinkedIn Button */}
                 <a 
-                  href="https://www.linkedin.com/in/nurjahanjhorna/" 
+                  href="https://www.linkedin.com/in/nurjahan-jhorna" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg bg-secondary-50 hover:bg-secondary-100 transition-colors duration-300 group"
-                  aria-label="Connect with me on LinkedIn"
+                  className="flex items-center p-4 rounded-lg bg-purple-50 hover:bg-purple-100 transition-colors duration-300 group"
+                  aria-label="Visit my LinkedIn profile"
                 >
                   <div className="p-3 bg-white rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Linkedin className="h-6 w-6 text-secondary-700" aria-hidden="true" />
+                    <Linkedin className="h-6 w-6 text-purple-700" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-medium text-secondary-800">LinkedIn</h3>
@@ -124,7 +130,22 @@ export default function Contact() {
                   </div>
                 </a>
 
-
+                {/* GitHub Button */}
+                <a 
+                  href="https://github.com/NurjahanJ" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
+                  aria-label="Visit my GitHub profile"
+                >
+                  <div className="p-3 bg-white rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                    <Github className="h-6 w-6 text-slate-700" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-primary-800">GitHub</h3>
+                    <p className="text-sm text-primary-600">View my code repositories</p>
+                  </div>
+                </a>
 
                 {/* Nature-inspired decorative elements */}
                 <div className="relative h-40 mt-8 overflow-hidden rounded-lg bg-primary-100 flex items-center justify-center">
@@ -140,31 +161,32 @@ export default function Contact() {
 
           {/* Contact Form Column */}
           <div className="order-1 lg:order-2">
-            <Card className="border-l-4 border-l-secondary shadow-md hover:shadow-lg transition-shadow duration-300">
+            <Card className="border-l-4 border-l-purple-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white">
               <CardHeader>
-                <CardTitle className="text-secondary-700 text-2xl">Send a Message</CardTitle>
-                <CardDescription>
-                  Have a question or want to work together? Drop me a message!
+                <CardTitle className="text-purple-800 text-2xl font-serif">Share Your Thoughts</CardTitle>
+                <CardDescription className="text-slate-600 font-light">
+                  Have a question or idea you'd like to discuss? I'd love to hear from you.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-primary-700">Name</Label>
+                    <Label htmlFor="name" className="text-purple-700 font-light">Name</Label>
                     <Input
                       id="name"
                       name="name"
+                      type="text"
                       placeholder="Your name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="border-primary-200 focus:border-primary-300"
+                      className="border-purple-200 focus:border-purple-300 focus:ring-purple-200"
                       aria-label="Your name"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-primary-700">Email</Label>
+                    <Label htmlFor="email" className="text-purple-700 font-light">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -173,28 +195,28 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="border-primary-200 focus:border-primary-300"
+                      className="border-purple-200 focus:border-purple-300 focus:ring-purple-200"
                       aria-label="Your email address"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-primary-700">Message</Label>
+                    <Label htmlFor="message" className="text-purple-700 font-light">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Your message here..."
+                      placeholder="Share your thoughts or questions..."
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="min-h-[150px] border-primary-200 focus:border-primary-300"
+                      className="min-h-[150px] border-purple-200 focus:border-purple-300 focus:ring-purple-200"
                       aria-label="Your message"
                     />
                   </div>
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary-600 text-white transition-all duration-300 hover:scale-[1.02]"
+                    className="w-full bg-purple-700 hover:bg-purple-800 text-white transition-all duration-300"
                     disabled={isSubmitting}
                     aria-label="Send message"
                   >
@@ -216,14 +238,14 @@ export default function Contact() {
                   
                   {/* Success Message */}
                   {submitSuccess && (
-                    <div className="p-3 bg-green-100 border border-green-200 text-green-800 rounded-md">
-                      Your message has been sent successfully! I'll get back to you soon.
+                    <div className="p-3 bg-indigo-50 border border-indigo-200 text-indigo-800 rounded-md font-light">
+                      Thank you for your message. I appreciate you taking the time to share your thoughts and will respond thoughtfully soon.
                     </div>
                   )}
                   
                   {/* Error Message */}
                   {submitError && (
-                    <div className="p-3 bg-red-100 border border-red-200 text-red-800 rounded-md">
+                    <div className="p-3 bg-red-50 border border-red-200 text-red-800 rounded-md font-light">
                       {submitError}
                     </div>
                   )}
@@ -235,26 +257,30 @@ export default function Contact() {
 
         {/* Footer Navigation */}
         <div className="mt-16 text-center">
-          <nav className="flex justify-center space-x-6" aria-label="Footer navigation">
+          <nav className="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
             <Link 
               href="/" 
-              className="text-primary hover:text-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 p-1 rounded"
+              className="text-indigo-700 hover:text-indigo-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50"
             >
+              <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
               Home
             </Link>
             <Link 
               href="/about" 
-              className="text-primary hover:text-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 p-1 rounded"
+              className="text-indigo-700 hover:text-indigo-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50"
             >
+              <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
               About
             </Link>
             <Link 
-              href="/projects" 
-              className="text-primary hover:text-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 p-1 rounded"
+              href="/#projects" 
+              className="text-indigo-700 hover:text-indigo-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50"
             >
-              Projects
+              <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
+              My Playground
             </Link>
           </nav>
+          <p className="text-sm text-slate-600 mt-6 font-light">© 2025 Nurjahan Jhorna. Illuminating digital wisdom.</p>
         </div>
       </main>
     </div>

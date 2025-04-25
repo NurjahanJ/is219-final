@@ -94,7 +94,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-slate-50 pt-16 md:pt-20">
       {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -103,17 +103,20 @@ export default function Home() {
       />
 
       {/* Fullscreen Hero Section */}
-      <section className="relative h-screen flex items-center justify-center px-4 z-10">
+      <section className="relative h-screen flex items-center justify-center px-4 z-10 bg-gradient-to-b from-slate-50 to-indigo-50">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          <h1 className="text-primary text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-            Designing Meaningful <br className="hidden md:block" />
-            Digital Experiences
+          <div className="mb-6">
+            <span className="inline-block px-4 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium mb-4">Web & Information Systems</span>
+          </div>
+          <h1 className="text-indigo-900 text-4xl md:text-5xl lg:text-6xl font-serif leading-tight tracking-tight">
+            Illuminating <br className="hidden md:block" />
+            Digital Wisdom
           </h1>
-          <p className="text-lg md:text-xl text-medium-contrast max-w-2xl mx-auto">
-            Navigating the digital landscape with creativity and purpose. I craft intuitive interfaces and engaging experiences that connect, inspire, and deliver results.
+          <p className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto font-light leading-relaxed">
+            Guiding the digital journey with clarity and insight. I create thoughtful interfaces and knowledge-rich experiences that educate, illuminate, and inspire understanding.
           </p>
           <div className="pt-8">
-            <Button asChild size="lg" className="text-base bg-primary hover:bg-primary-600 text-white shadow-lg transition-all duration-300 hover:scale-105">
+            <Button asChild size="lg" className="text-base bg-indigo-700 hover:bg-indigo-800 text-white shadow-md transition-all duration-300">
               <Link href="/#projects">Explore My Work</Link>
             </Button>
           </div>
@@ -131,48 +134,52 @@ export default function Home() {
         {/* My Journey Section */}
         <section id="journey" className="py-16">
           <div className="text-center mb-16">
-            <h2 className="text-primary text-3xl md:text-4xl font-bold mb-6">My Journey</h2>
-            <p className="text-lg text-medium-contrast max-w-3xl mx-auto">
-              Exploring the path that has shaped my skills and perspective in the digital world.
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px w-12 bg-indigo-300 mr-4"></div>
+              <h2 className="text-indigo-900 text-3xl md:text-4xl font-serif mb-6">My Journey</h2>
+              <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+            </div>
+            <p className="text-lg text-slate-700 max-w-3xl mx-auto font-light">
+              The path of knowledge that has shaped my understanding and perspective in the digital realm.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Education Card */}
-            <article className="bg-card rounded-xl shadow-md p-6 border-t-4 border-t-primary-500 hover:shadow-lg transition-shadow">
+            <article className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-l-indigo-600 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-primary-100 rounded-full text-primary">
+                <div className="p-3 bg-indigo-100 rounded-full text-indigo-700">
                   <Compass className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary">Education</h3>
+                <h3 className="text-xl font-medium text-indigo-800 font-serif">Education</h3>
               </div>
-              <p className="text-medium-contrast">
+              <p className="text-slate-700 leading-relaxed">
                 Currently pursuing a degree in Web & Information Systems, where I'm building a strong foundation in both the technical and design aspects of web development. My coursework includes UX design principles, web programming, and information architecture.  
               </p>
             </article>
             
             {/* Development Card */}
-            <article className="bg-card rounded-xl shadow-md p-6 border-t-4 border-t-secondary-500 hover:shadow-lg transition-shadow">
+            <article className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-l-purple-600 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-secondary-100 rounded-full text-secondary">
+                <div className="p-3 bg-purple-100 rounded-full text-purple-700">
                   <Code className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary">Development</h3>
+                <h3 className="text-xl font-medium text-purple-800 font-serif">Development</h3>
               </div>
-              <p className="text-medium-contrast">
+              <p className="text-slate-700 leading-relaxed">
                 Continuously expanding my development skills through hands-on projects and self-directed learning. I'm proficient in HTML, CSS, JavaScript, and React, and I'm always exploring new technologies to add to my toolkit. I enjoy the problem-solving aspect of coding and the satisfaction of building functional, responsive websites.
               </p>
             </article>
             
             {/* Design Card */}
-            <article className="bg-card rounded-xl shadow-md p-6 border-t-4 border-t-accent-500 hover:shadow-lg transition-shadow">
+            <article className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-l-slate-600 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-accent-100 rounded-full text-accent">
+                <div className="p-3 bg-slate-100 rounded-full text-slate-700">
                   <Palette className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-accent">Design</h3>
+                <h3 className="text-xl font-medium text-slate-800 font-serif">Design</h3>
               </div>
-              <p className="text-medium-contrast">
+              <p className="text-slate-700 leading-relaxed">
                 Developing my UX/UI design skills through coursework and self-directed learning. I'm passionate about creating user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my ideas to life.
               </p>
             </article>
@@ -182,9 +189,13 @@ export default function Home() {
         {/* Projects Section */}
         <section id="projects" className="py-16">
           <div className="text-center mb-16">
-            <h2 className="text-primary text-3xl md:text-4xl font-bold mb-6">My Playground</h2>
-            <p className="text-lg text-medium-contrast max-w-3xl mx-auto">
-              Explore my latest work showcasing my skills in web development, design, and problem-solving.
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px w-12 bg-indigo-300 mr-4"></div>
+              <h2 className="text-indigo-900 text-3xl md:text-4xl font-serif mb-6">My Playground</h2>
+              <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+            </div>
+            <p className="text-lg text-slate-700 max-w-3xl mx-auto font-light">
+              Discover my collection of works that demonstrate my approach to problem-solving and knowledge application.
             </p>
           </div>
           
