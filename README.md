@@ -1,20 +1,20 @@
-# Explorer Portfolio
+# Sage Portfolio
 
-A modern, responsive portfolio website built with the Explorer brand archetype, featuring colors inspired by nature and an adventure-themed design. This portfolio showcases projects, skills, and professional journey in an engaging, visually appealing format.
+A modern, responsive portfolio website built with the Sage brand archetype, featuring a thoughtful color palette and a knowledge-focused design. This portfolio showcases projects, skills, and professional journey in an elegant, insightful format.
 
-![Explorer Portfolio Preview](public/explorer-preview.jpg)
+## 📚 Brand Archetype: Sage
 
-## 🌲 Brand Archetype: Explorer
+This portfolio embodies the Sage archetype with:
 
-This portfolio embodies the Explorer archetype with:
+- **Thoughtful, calming color palette:**
+  - Deep Indigo (#4338ca) - Primary color representing wisdom and knowledge
+  - Soft Purple (#a78bfa) - Secondary color evoking thoughtfulness and creativity
+  - Muted Teal (#0d9488) - Accent color adding depth and contemplation
+  - Slate Gray (#64748b) - Neutral color providing balance and clarity
 
-- **Colors inspired by nature:**
-  - Forest Green (#2f4f4f) - Primary color representing stability and adventure
-  - Sky Blue (#87ceeb) - Secondary color evoking openness and possibility
-  - Sandstone (#c2b280) - Accent color adding warmth and grounding
-
-- **Adventure-themed content** that invites visitors to join a journey of discovery
-- **Responsive design** that adapts to different devices like a true explorer adapts to different terrains
+- **Educational content** that invites visitors to explore a journey of knowledge and growth
+- **Organized, structured layout** with clear hierarchy and ample white space
+- **Dark mode support** with carefully selected color combinations for optimal readability
 
 ## 🛠️ Tech Stack
 
@@ -22,7 +22,7 @@ This portfolio embodies the Explorer archetype with:
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[shadcn/ui](https://ui.shadcn.com/)** - Accessible UI components
-- **Windsurf** - Modern animation library
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Dark mode implementation
 - **Responsive Design** - Mobile-first approach
 
 ## 📂 Project Structure
@@ -48,11 +48,12 @@ This portfolio embodies the Explorer archetype with:
 ## ✨ Features
 
 - **Responsive Design** - Looks great on all devices from mobile to desktop
-- **About Page** - Personal introduction with "My Journey" section featuring key milestones
-- **Projects Page** - Showcase of work with filterable project cards
-- **Explorer Theme** - Custom color palette inspired by nature
+- **About Page** - Personal introduction with knowledge and tools sections
+- **Projects Section** - Showcase of work with animated project cards
+- **Contact Page** - Easy way to get in touch
+- **Sage Theme** - Custom color palette inspired by wisdom and knowledge
 - **Accessible UI** - Keyboard navigation and screen reader support
-- **Dark Mode Support** - Optimized for both light and dark preferences
+- **Dark Mode Support** - Thoughtfully designed for both light and dark preferences
 
 ## 🚀 Getting Started
 
@@ -83,7 +84,7 @@ This portfolio embodies the Explorer archetype with:
 
 ## 🌐 Live Demo
 
-Explore the live site: [https://dasboard-wheat.vercel.app/](https://dasboard-wheat.vercel.app/)
+Explore the live site: [https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/](https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/)
 
 ## 🤝 Contributing
 
@@ -105,5 +106,3 @@ To make this portfolio your own:
 4. Replace placeholder images with your own in the `public` directory
 
 ---
-
-Built with ❤️ using Next.js and the Explorer design system. Ready to embark on your next digital adventure!
