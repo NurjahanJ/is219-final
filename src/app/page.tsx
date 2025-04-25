@@ -1,17 +1,34 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectsAnimation } from "@/components/ProjectsAnimation";
 import { projects } from "@/lib/projects";
-import { Compass, Code, Palette } from "lucide-react";
+import { Compass, Code, Palette, ChevronDown } from "lucide-react";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [headlineVisible, setHeadlineVisible] = useState(false);
+  const [buttonVisible, setButtonVisible] = useState(false);
+  const [compassBounce, setCompassBounce] = useState(false);
 
-  // Animated background effect
+  // Animation timing effects
+  useEffect(() => {
+    // Staggered animations for elements
+    const headlineTimer = setTimeout(() => setHeadlineVisible(true), 300);
+    const buttonTimer = setTimeout(() => setButtonVisible(true), 800);
+    const compassTimer = setTimeout(() => setCompassBounce(true), 1500);
+    
+    return () => {
+      clearTimeout(headlineTimer);
+      clearTimeout(buttonTimer);
+      clearTimeout(compassTimer);
+    };
+  }, []);
+
+  // Animated star field background effect
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -28,27 +45,91 @@ export default function Home() {
     setCanvasDimensions();
     window.addEventListener("resize", setCanvasDimensions);
 
-    // Create particles
-    const particles: Array<{
+    // Create stars
+    const stars: Array<{
       x: number;
       y: number;
       size: number;
-      speedX: number;
-      speedY: number;
-      color: string;
+      opacity: number;
+      pulse: number;
+      pulseSpeed: number;
     }> = [];
+    
+    // Create shooting stars
+    const shootingStars: Array<{
+      x: number;
+      y: number;
+      length: number;
+      speed: number;
+      angle: number;
+      opacity: number;
+      active: boolean;
+      trail: Array<{x: number, y: number, opacity: number}>
+      lifetime: number;
+      maxLifetime: number;
+    }> = [];
+    
+    // Initialize shooting stars (inactive initially)
+    for (let i = 0; i < 5; i++) {
+      shootingStars.push({
+        x: 0,
+        y: 0,
+        length: 0,
+        speed: 0,
+        angle: 0,
+        opacity: 0,
+        active: false,
+        trail: [],
+        lifetime: 0,
+        maxLifetime: 0
+      });
+    }
 
-    const colors = ["#2f4f4f", "#87ceeb", "#c2b280"];
-    const particleCount = 30;
+    // Function to create a new shooting star
+    const createShootingStar = (star: typeof shootingStars[0]) => {
+      // Start position - anywhere in the top half of the screen
+      star.x = Math.random() * canvas.width;
+      star.y = Math.random() * (canvas.height * 0.5);
+      
+      // Angle - slightly downward trajectory (between 30° and 60°)
+      star.angle = Math.PI / 6 + Math.random() * (Math.PI / 6);
+      if (Math.random() > 0.5) star.angle = Math.PI - star.angle; // 50% chance to go left instead of right
+      
+      // Speed and length
+      star.speed = 5 + Math.random() * 10;
+      star.length = 50 + Math.random() * 80;
+      star.opacity = 0.7 + Math.random() * 0.3;
+      star.active = true;
+      star.trail = [];
+      star.lifetime = 0;
+      star.maxLifetime = 70 + Math.random() * 50; // Frames the star will live
+    };
 
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
+    // Create different types of stars
+    const starCount = Math.min(window.innerWidth / 3, 200); // Responsive star count
+    
+    for (let i = 0; i < starCount; i++) {
+      const size = Math.random() * 2.5;
+      stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 5 + 1,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        color: colors[Math.floor(Math.random() * colors.length)],
+        size: size,
+        opacity: Math.random() * 0.8 + 0.2,
+        pulse: 0,
+        pulseSpeed: Math.random() * 0.02 + 0.005
+      });
+    }
+    
+    // Create a few larger stars that pulse more dramatically
+    for (let i = 0; i < 15; i++) {
+      const size = Math.random() * 1.5 + 2;
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: size,
+        opacity: Math.random() * 0.5 + 0.5,
+        pulse: Math.random() * Math.PI * 2, // Random start position in pulse cycle
+        pulseSpeed: Math.random() * 0.03 + 0.01
       });
     }
 
@@ -56,31 +137,132 @@ export default function Home() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw gradient background
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, "rgba(47, 79, 79, 0.05)"); // Forest Green with opacity
-      gradient.addColorStop(1, "rgba(135, 206, 235, 0.05)"); // Sky Blue with opacity
+      // Draw deep space background
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, "#001233"); // Deep navy blue
+      gradient.addColorStop(0.5, "#001845"); // Slightly lighter navy
+      gradient.addColorStop(1, "#000814"); // Almost black
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Add subtle nebula effect
+      const nebulaGradient = ctx.createRadialGradient(
+        canvas.width * 0.8, canvas.height * 0.2, 0,
+        canvas.width * 0.8, canvas.height * 0.2, canvas.width * 0.6
+      );
+      nebulaGradient.addColorStop(0, "rgba(75, 0, 130, 0.03)"); // Indigo with low opacity
+      nebulaGradient.addColorStop(0.5, "rgba(138, 43, 226, 0.02)"); // Purple with low opacity
+      nebulaGradient.addColorStop(1, "rgba(0, 0, 0, 0)"); // Transparent
+      ctx.fillStyle = nebulaGradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw particles
-      for (const particle of particles) {
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
-
-        // Bounce off edges
-        if (particle.x < 0 || particle.x > canvas.width) {
-          particle.speedX *= -1;
-        }
-        if (particle.y < 0 || particle.y > canvas.height) {
-          particle.speedY *= -1;
-        }
-
-        // Draw particle
+      // Draw stars
+      for (const star of stars) {
+        // Update star pulse
+        star.pulse += star.pulseSpeed;
+        
+        // Calculate current opacity based on pulse
+        const pulseOpacity = star.opacity * (0.7 + 0.3 * Math.sin(star.pulse));
+        
+        // Draw star
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = particle.color + "20"; // Add transparency
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        
+        // Create a radial gradient for the star glow
+        const glow = ctx.createRadialGradient(
+          star.x, star.y, 0,
+          star.x, star.y, star.size * 2
+        );
+        glow.addColorStop(0, `rgba(255, 255, 255, ${pulseOpacity})`);
+        glow.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        
+        ctx.fillStyle = glow;
         ctx.fill();
+        
+        // Draw the star core
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size * 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${pulseOpacity + 0.2})`;
+        ctx.fill();
+      }
+      
+      // Randomly create new shooting stars
+      if (Math.random() < 0.01) { // 1% chance each frame to create a new shooting star
+        const inactiveStar = shootingStars.find(star => !star.active);
+        if (inactiveStar) {
+          createShootingStar(inactiveStar);
+        }
+      }
+      
+      // Update and draw shooting stars
+      for (const star of shootingStars) {
+        if (!star.active) continue;
+        
+        // Update position
+        star.x += Math.cos(star.angle) * star.speed;
+        star.y += Math.sin(star.angle) * star.speed;
+        
+        // Add to trail
+        star.trail.unshift({ x: star.x, y: star.y, opacity: star.opacity });
+        
+        // Limit trail length
+        if (star.trail.length > 20) {
+          star.trail.pop();
+        }
+        
+        // Draw shooting star head
+        ctx.beginPath();
+        const headGradient = ctx.createRadialGradient(
+          star.x, star.y, 0,
+          star.x, star.y, 3
+        );
+        headGradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity})`);
+        headGradient.addColorStop(1, `rgba(200, 255, 255, 0)`);
+        ctx.fillStyle = headGradient;
+        ctx.arc(star.x, star.y, 2, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Draw trail
+        if (star.trail.length > 1) {
+          ctx.beginPath();
+          ctx.moveTo(star.trail[0].x, star.trail[0].y);
+          
+          // Draw the main trail line
+          for (let i = 1; i < star.trail.length; i++) {
+            ctx.lineTo(star.trail[i].x, star.trail[i].y);
+          }
+          
+          // Create gradient for trail
+          const trailGradient = ctx.createLinearGradient(
+            star.trail[0].x, star.trail[0].y,
+            star.trail[star.trail.length - 1].x, star.trail[star.trail.length - 1].y
+          );
+          
+          trailGradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity})`);
+          trailGradient.addColorStop(0.3, `rgba(120, 220, 255, ${star.opacity * 0.6})`);
+          trailGradient.addColorStop(1, 'rgba(70, 120, 255, 0)');
+          
+          ctx.strokeStyle = trailGradient;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          
+          // Add glow effect to trail
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${star.opacity * 0.3})`;
+          ctx.stroke();
+        }
+        
+        // Check if star is out of bounds or lifetime exceeded
+        star.lifetime++;
+        if (
+          star.x < 0 ||
+          star.x > canvas.width ||
+          star.y < 0 ||
+          star.y > canvas.height ||
+          star.lifetime > star.maxLifetime
+        ) {
+          star.active = false;
+        }
       }
 
       requestAnimationFrame(animate);
@@ -94,8 +276,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-16 md:pt-20">
-      {/* Animated Background Canvas */}
+    <div className="min-h-screen">
+      {/* Animated Star Background Canvas */}
       <canvas
         ref={canvasRef}
         className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
@@ -103,100 +285,122 @@ export default function Home() {
       />
 
       {/* Fullscreen Hero Section */}
-      <section className="relative h-screen flex items-center justify-center px-4 z-10 bg-gradient-to-b from-slate-50 to-indigo-50 dark:from-slate-900 dark:to-indigo-950">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-sm font-medium mb-4">Web & Information Systems</span>
+      <section className="relative h-screen flex flex-col items-center justify-center px-4 z-10">
+        <div className="max-w-5xl mx-auto text-center space-y-12">
+          {/* Explorer Badge */}
+          <div className={`transition-all duration-700 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="inline-block px-4 py-1 bg-indigo-900/40 border border-indigo-500/30 text-indigo-300 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
+              Digital Explorer
+            </span>
           </div>
-          <div className="max-w-3xl mx-auto text-center pb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-700 via-purple-700 to-indigo-700 dark:from-indigo-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent mb-6">
-              Nurjahan Jhorna
+          
+          {/* Main Headline */}
+          <div className={`max-w-3xl mx-auto text-center transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 font-sans leading-tight tracking-tight">
+              Charting New Frontiers <br className="hidden md:block" />
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">in Technology</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8">
+            <p className="text-xl md:text-2xl text-slate-300 mb-8">
               UX Designer & Frontend Developer
             </p>
-            <p className="text-lg text-slate-700 dark:text-slate-300 mb-8">
-              Guiding the digital journey with clarity and insight. I create thoughtful interfaces and knowledge-rich experiences that educate, illuminate, and inspire understanding.
+            <p className="text-lg text-slate-300 mb-10 font-light leading-relaxed max-w-2xl mx-auto">
+              Exploring the digital wilderness through innovative web development and design. Join me on a journey of discovery and creation.
             </p>
+            
+            {/* Glowing Button */}
+            <div className={`flex flex-wrap gap-6 justify-center transition-all duration-700 delay-300 transform ${buttonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <Button asChild size="lg" className="rounded-full px-8 py-6 text-base bg-transparent hover:bg-transparent relative group overflow-hidden">
+                <Link href="/about" className="relative z-10 text-white font-medium text-lg">
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur-md group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
+                  <span className="relative z-20 flex items-center justify-center gap-2">
+                    Explore Now
+                  </span>
+                </Link>
+              </Button>
+              
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-slate-500 text-slate-300 hover:text-white hover:bg-slate-800/50 hover:border-slate-400">
+                <Link href="/contact">Contact</Link>
+              </Button>
+            </div>
           </div>
-          <div className="pt-8">
-            <Button asChild size="lg" className="text-base bg-indigo-700 hover:bg-indigo-800 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white shadow-md transition-all duration-300">
-              <Link href="/#projects">Explore My Work</Link>
-            </Button>
-          </div>
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary">
-              <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          
+          {/* Bouncing Compass Icon */}
+          <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${compassBounce ? 'animate-bounce' : 'opacity-0'} transition-opacity duration-500`}>
+            <div className="bg-slate-800/70 p-3 rounded-full border border-slate-600/50 backdrop-blur-sm">
+              <ChevronDown className="h-6 w-6 text-cyan-400" />
+              <span className="sr-only">Scroll down</span>
+            </div>
           </div>
         </div>
       </section>
 
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
         {/* My Journey Section */}
-        <section id="journey" className="py-16">
-          <div className="text-center mb-16">
+        <section id="journey" className="py-12 md:py-20">
+          <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-indigo-400 dark:bg-indigo-600 mr-4"></div>
-              <h2 className="text-indigo-800 dark:text-indigo-300 text-3xl md:text-4xl font-serif mb-6">My Journey</h2>
-              <div className="h-px w-12 bg-indigo-400 dark:bg-indigo-600 ml-4"></div>
+              <div className="h-px w-12 bg-cyan-500/70 mr-4"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white font-sans">The Expedition</h2>
+              <div className="h-px w-12 bg-cyan-500/70 ml-4"></div>
             </div>
-            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
-              The path of knowledge that has shaped my understanding and perspective in the digital realm.
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto text-center font-light mb-12">
+              Navigating the digital wilderness through continuous exploration, discovery, and creation of innovative web experiences.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-indigo-600 dark:border-l-indigo-400 hover:shadow-md transition-shadow duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Education Card */}
+            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-cyan-600 hover:shadow-cyan-900/20 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-indigo-50 dark:bg-indigo-900/50 rounded-full text-indigo-700 dark:text-indigo-300">
+                <div className="p-3 bg-cyan-900/50 rounded-full text-cyan-400">
                   <Compass className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-indigo-800 dark:text-indigo-300 font-serif">Education</h3>
+                <h3 className="text-xl font-medium text-cyan-300 font-sans">Navigation</h3>
               </div>
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light">
-                Currently pursuing a degree in Web & Information Systems, where I'm building a strong foundation in both the technical and design aspects of web development. My coursework includes UX design principles, web programming, and information architecture.  
+              <p className="text-slate-300 leading-relaxed font-light">
+                Charting a course through Web & Information Systems, where I'm building a strong foundation in both the technical and design aspects of web development. My expedition includes UX design principles, web programming, and information architecture.  
               </p>
             </article>
             
             {/* Development Card */}
-            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-purple-600 dark:border-l-purple-400 hover:shadow-md transition-shadow duration-300">
+            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-blue-600 hover:shadow-blue-900/20 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-purple-50 dark:bg-purple-900/50 rounded-full text-purple-700 dark:text-purple-300">
+                <div className="p-3 bg-blue-900/50 rounded-full text-blue-400">
                   <Code className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-purple-800 dark:text-purple-300 font-serif">Development</h3>
+                <h3 className="text-xl font-medium text-blue-300 font-sans">Development</h3>
               </div>
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light">
-                Continuously expanding my development skills through hands-on projects and self-directed learning. I'm proficient in HTML, CSS, JavaScript, and React, and I'm always exploring new technologies to add to my toolkit. I enjoy the problem-solving aspect of coding and the satisfaction of building functional, responsive websites.
+              <p className="text-slate-300 leading-relaxed font-light">
+                Venturing into new coding territories through hands-on projects and self-directed learning. I'm proficient in HTML, CSS, JavaScript, and React, and I'm always exploring new technologies to add to my toolkit. I thrive on the challenge of solving complex problems and building responsive digital landscapes.
               </p>
             </article>
             
             {/* Design Card */}
-            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-teal-600 dark:border-l-teal-400 hover:shadow-md transition-shadow duration-300">
+            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-indigo-600 hover:shadow-indigo-900/20 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-teal-50 dark:bg-teal-900/50 rounded-full text-teal-700 dark:text-teal-300">
+                <div className="p-3 bg-indigo-900/50 rounded-full text-indigo-400">
                   <Palette className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-teal-800 dark:text-teal-300 font-serif">Design</h3>
+                <h3 className="text-xl font-medium text-indigo-300 font-sans">Design</h3>
               </div>
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light">
-                Developing my UX/UI design skills through coursework and self-directed learning. I'm passionate about creating user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my ideas to life.
+              <p className="text-slate-300 leading-relaxed font-light">
+                Mapping the uncharted territories of UX/UI design through coursework and creative exploration. I'm passionate about crafting user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my visionary ideas to life.
               </p>
             </article>
           </div>
         </section>
         
         {/* Projects Section */}
-        <section id="projects" className="py-16 md:py-24 bg-slate-100 dark:bg-slate-800">
+        <section id="projects" className="py-16 md:py-24 bg-slate-900/80 backdrop-blur-sm border-y border-slate-800">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-indigo-300 mr-4"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-indigo-800 dark:text-indigo-300">My Playground</h2>
-              <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+              <div className="h-px w-12 bg-blue-500/70 mr-4"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">My Playground</h2>
+              <div className="h-px w-12 bg-blue-500/70 ml-4"></div>
             </div>
-            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-light mb-12">
-              Discover my collection of works that demonstrate my approach to problem-solving and knowledge application.
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto font-light mb-12">
+              Artifacts from my digital expeditions — projects that showcase my approach to exploration, problem-solving, and innovation in the technological wilderness.
             </p>
           </div>
           
