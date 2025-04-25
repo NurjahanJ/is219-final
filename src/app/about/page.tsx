@@ -58,52 +58,6 @@ export default function About() {
           </div>
         </div>
         
-        {/* My Journey Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-primary" id="journey">My Journey</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Journey Card 1 */}
-            <article className="bg-card rounded-xl shadow-md p-6 border-l-4 border-l-primary-500 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-primary-100 rounded-full mr-4" aria-hidden="true">
-                  <Compass className="h-8 w-8 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-primary">Education</h3>
-              </div>
-              <p className="text-medium-contrast">
-                Currently pursuing my degree in Web & Information Systems, where I'm building a strong foundation in both technical development and design principles. Each course expands my understanding of digital solutions.
-              </p>
-            </article>
-            
-            {/* Journey Card 2 */}
-            <article className="bg-card rounded-xl shadow-md p-6 border-l-4 border-l-secondary-500 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-secondary-100 rounded-full mr-4" aria-hidden="true">
-                  <Code className="h-8 w-8 text-secondary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary">Development</h3>
-              </div>
-              <p className="text-medium-contrast">
-                Focused on mastering modern web technologies including React, TypeScript, and Next.js. I've completed several academic projects that have strengthened my problem-solving abilities and technical implementation skills.
-              </p>
-            </article>
-            
-            {/* Journey Card 3 */}
-            <article className="bg-card rounded-xl shadow-md p-6 border-l-4 border-l-accent-500 hover:shadow-lg transition-shadow">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-accent-100 rounded-full mr-4" aria-hidden="true">
-                  <Palette className="h-8 w-8 text-accent-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-accent">Design</h3>
-              </div>
-              <p className="text-medium-contrast">
-                Developing my UX/UI design skills through coursework and self-directed learning. I'm passionate about creating user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my ideas to life.
-              </p>
-            </article>
-          </div>
-        </div>
-        
         {/* Skills Section */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-primary" id="skills">Skills & Tools</h2>

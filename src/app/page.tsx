@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectsAnimation } from "@/components/ProjectsAnimation";
 import { projects } from "@/lib/projects";
+import { Compass, Code, Palette } from "lucide-react";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -178,6 +179,57 @@ export default function Home() {
       </section>
 
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
+        {/* My Journey Section */}
+        <section id="journey" className="py-16">
+          <div className="text-center mb-16">
+            <h2 className="text-primary text-3xl md:text-4xl font-bold mb-6">My Journey</h2>
+            <p className="text-lg text-medium-contrast max-w-3xl mx-auto">
+              Exploring the path that has shaped my skills and perspective in the digital world.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Education Card */}
+            <article className="bg-card rounded-xl shadow-md p-6 border-t-4 border-t-primary-500 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-primary-100 rounded-full text-primary">
+                  <Compass className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold text-primary">Education</h3>
+              </div>
+              <p className="text-medium-contrast">
+                Currently pursuing a degree in Web & Information Systems, where I'm building a strong foundation in both the technical and design aspects of web development. My coursework includes UX design principles, web programming, and information architecture.  
+              </p>
+            </article>
+            
+            {/* Development Card */}
+            <article className="bg-card rounded-xl shadow-md p-6 border-t-4 border-t-secondary-500 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-secondary-100 rounded-full text-secondary">
+                  <Code className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold text-secondary">Development</h3>
+              </div>
+              <p className="text-medium-contrast">
+                Continuously expanding my development skills through hands-on projects and self-directed learning. I'm proficient in HTML, CSS, JavaScript, and React, and I'm always exploring new technologies to add to my toolkit. I enjoy the problem-solving aspect of coding and the satisfaction of building functional, responsive websites.
+              </p>
+            </article>
+            
+            {/* Design Card */}
+            <article className="bg-card rounded-xl shadow-md p-6 border-t-4 border-t-accent-500 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-accent-100 rounded-full text-accent">
+                  <Palette className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold text-accent">Design</h3>
+              </div>
+              <p className="text-medium-contrast">
+                Developing my UX/UI design skills through coursework and self-directed learning. I'm passionate about creating user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my ideas to life.
+              </p>
+            </article>
+          </div>
+        </section>
+        
         {/* Projects Section */}
         <section id="projects" className="py-16">
           <div className="text-center mb-16">
