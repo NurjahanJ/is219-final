@@ -19,11 +19,11 @@ export function ProjectsAnimation({ projects }: ProjectsAnimationProps) {
     <>
       {projects.length > 0 ? (
         <div className="max-w-full mx-auto overflow-x-auto pb-4">
-          <div className="flex flex-nowrap gap-6 px-4">
+          <div className="flex flex-nowrap gap-6 px-6 md:px-8 justify-center w-fit mx-auto">
             {projects.map((project, index) => (
               <div 
                 key={`${project.title}-${index}`} 
-                className={`opacity-0 flex-shrink-0 w-full max-w-xs ${mounted ? 'animate-fade-in' : ''}`}
+                className={`opacity-0 flex-shrink-0 w-full max-w-sm ${mounted ? 'animate-fade-in' : ''}`}
                 style={{ 
                   animationDelay: `${index * 150}ms`, 
                   animationFillMode: 'forwards' 
