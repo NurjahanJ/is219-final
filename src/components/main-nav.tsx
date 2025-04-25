@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -100,7 +99,6 @@ export function MainNav() {
             {route.label}
           </Link>
         ))}
-        <ThemeToggle />
       </div>
       
       {/* Mobile Navigation - NavDrawer */}
