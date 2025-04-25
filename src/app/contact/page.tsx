@@ -64,23 +64,23 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-indigo-50 px-4 py-12 md:py-20 pt-16 md:pt-24 relative">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-indigo-50 dark:from-slate-900 dark:to-indigo-950 px-4 py-12 md:py-20 pt-16 md:pt-24 relative">
       {/* Decorative background elements */}
-      <div className="absolute top-1/4 right-1/4 bg-indigo-100 w-32 h-32 rounded-full opacity-20" aria-hidden="true"></div>
-      <div className="absolute bottom-1/3 left-1/3 bg-purple-100 w-24 h-24 rounded-full opacity-10" aria-hidden="true"></div>
+      <div className="absolute top-1/4 right-1/4 bg-indigo-100 dark:bg-indigo-700 w-32 h-32 rounded-full opacity-20" aria-hidden="true"></div>
+      <div className="absolute bottom-1/3 left-1/3 bg-purple-100 dark:bg-purple-700 w-24 h-24 rounded-full opacity-10" aria-hidden="true"></div>
       
       <main className="container mx-auto max-w-5xl relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-full mb-4">
-            <MessageSquare className="h-6 w-6 text-indigo-700" aria-hidden="true" />
+          <div className="inline-flex items-center justify-center p-3 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
+            <MessageSquare className="h-6 w-6 text-indigo-700 dark:text-indigo-300" aria-hidden="true" />
           </div>
           <div className="flex items-center justify-center mb-4">
             <div className="h-px w-12 bg-indigo-300 mr-4"></div>
-            <h1 className="text-indigo-900 text-4xl md:text-5xl font-serif mb-2">Let's Connect</h1>
+            <h1 className="text-indigo-900 dark:text-indigo-300 text-4xl md:text-5xl font-serif mb-2">Let's Connect</h1>
             <div className="h-px w-12 bg-indigo-300 ml-4"></div>
           </div>
-          <p className="text-lg text-slate-700 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
             I'm always open to thoughtful discussions, sharing knowledge, and exploring ideas about UX and web design. 
             Let's collaborate on creating meaningful digital experiences that illuminate and educate.
           </p>
@@ -90,10 +90,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Methods Column */}
           <div className="order-2 lg:order-1">
-            <Card className="border-l-4 border-l-indigo-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white">
+            <Card className="border-l-4 border-l-indigo-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white dark:bg-slate-800 dark:border-indigo-400">
               <CardHeader>
-                <CardTitle className="text-indigo-800 text-2xl font-serif">Connect & Discuss</CardTitle>
-                <CardDescription className="text-slate-600 font-light">
+                <CardTitle className="text-indigo-800 dark:text-indigo-300 text-2xl font-serif">Connect & Discuss</CardTitle>
+                <CardDescription className="text-slate-600 dark:text-slate-400 font-light">
                   Reach out through these platforms to start a meaningful conversation.
                 </CardDescription>
               </CardHeader>
@@ -104,12 +104,12 @@ export default function Contact() {
                   className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
                   aria-label="Send me an email"
                 >
-                  <div className="p-3 bg-white rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Mail className="h-6 w-6 text-slate-700" aria-hidden="true" />
+                  <div className="p-3 bg-white dark:bg-slate-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                    <Mail className="h-6 w-6 text-slate-700 dark:text-slate-300" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-primary-800">Email</h3>
-                    <p className="text-sm text-primary-600">Send me a message</p>
+                    <h3 className="font-medium text-primary-800 dark:text-slate-300">Email</h3>
+                    <p className="text-sm text-primary-600 dark:text-slate-400">Send me a message</p>
                   </div>
                 </a>
 
@@ -118,15 +118,15 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/nurjahan-jhorna" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg bg-purple-50 hover:bg-purple-100 transition-colors duration-300 group"
+                  className="flex items-center p-4 rounded-lg bg-purple-50 dark:bg-purple-900/30 hover:bg-purple-100 dark:hover:bg-purple-800/40 transition-colors duration-300 group"
                   aria-label="Visit my LinkedIn profile"
                 >
-                  <div className="p-3 bg-white rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Linkedin className="h-6 w-6 text-purple-700" aria-hidden="true" />
+                  <div className="p-3 bg-white dark:bg-slate-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                    <Linkedin className="h-6 w-6 text-purple-700 dark:text-purple-300" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-secondary-800">LinkedIn</h3>
-                    <p className="text-sm text-secondary-600">Connect professionally</p>
+                    <h3 className="font-medium text-secondary-800 dark:text-purple-300">LinkedIn</h3>
+                    <p className="text-sm text-secondary-600 dark:text-purple-400">Connect professionally</p>
                   </div>
                 </a>
 
@@ -138,12 +138,12 @@ export default function Contact() {
                   className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
                   aria-label="Visit my GitHub profile"
                 >
-                  <div className="p-3 bg-white rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Github className="h-6 w-6 text-slate-700" aria-hidden="true" />
+                  <div className="p-3 bg-white dark:bg-slate-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                    <Github className="h-6 w-6 text-indigo-700 dark:text-indigo-300" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-primary-800">GitHub</h3>
-                    <p className="text-sm text-primary-600">View my code repositories</p>
+                    <h3 className="font-medium text-primary-800 dark:text-indigo-300">GitHub</h3>
+                    <p className="text-sm text-primary-600 dark:text-indigo-400">View my code repositories</p>
                   </div>
                 </a>
 
@@ -161,17 +161,17 @@ export default function Contact() {
 
           {/* Contact Form Column */}
           <div className="order-1 lg:order-2">
-            <Card className="border-l-4 border-l-purple-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white">
+            <Card className="border-l-4 border-l-purple-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white dark:bg-slate-800 dark:border-purple-400">
               <CardHeader>
-                <CardTitle className="text-purple-800 text-2xl font-serif">Share Your Thoughts</CardTitle>
-                <CardDescription className="text-slate-600 font-light">
+                <CardTitle className="text-purple-800 dark:text-purple-300 text-2xl font-serif">Share Your Thoughts</CardTitle>
+                <CardDescription className="text-slate-600 dark:text-slate-400 font-light">
                   Have a question or idea you'd like to discuss? I'd love to hear from you.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-purple-700 font-light">Name</Label>
+                    <Label htmlFor="name" className="text-purple-700 dark:text-purple-300 font-light">Name</Label>
                     <Input
                       id="name"
                       name="name"
@@ -186,7 +186,7 @@ export default function Contact() {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-purple-700 font-light">Email</Label>
+                    <Label htmlFor="email" className="text-purple-700 dark:text-purple-300 font-light">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -201,7 +201,7 @@ export default function Contact() {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-purple-700 font-light">Message</Label>
+                    <Label htmlFor="message" className="text-purple-700 dark:text-purple-300 font-light">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -216,7 +216,7 @@ export default function Contact() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-purple-700 hover:bg-purple-800 text-white transition-all duration-300"
+                    className="w-full bg-purple-700 hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700 text-white transition-all duration-300"
                     disabled={isSubmitting}
                     aria-label="Send message"
                   >
@@ -238,14 +238,14 @@ export default function Contact() {
                   
                   {/* Success Message */}
                   {submitSuccess && (
-                    <div className="p-3 bg-indigo-50 border border-indigo-200 text-indigo-800 rounded-md font-light">
+                    <div className="p-3 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 text-indigo-800 dark:text-indigo-300 rounded-md font-light">
                       Thank you for your message. I appreciate you taking the time to share your thoughts and will respond thoughtfully soon.
                     </div>
                   )}
                   
                   {/* Error Message */}
                   {submitError && (
-                    <div className="p-3 bg-red-50 border border-red-200 text-red-800 rounded-md font-light">
+                    <div className="p-3 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 text-red-800 dark:text-red-300 rounded-md font-light">
                       {submitError}
                     </div>
                   )}
@@ -280,7 +280,7 @@ export default function Contact() {
               My Playground
             </Link>
           </nav>
-          <p className="text-sm text-slate-600 mt-6 font-light">© 2025 Nurjahan Jhorna. Illuminating digital wisdom.</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-6 font-light">&copy; 2025 Nurjahan Jhorna. Illuminating digital wisdom.</p>
         </div>
       </main>
     </div>

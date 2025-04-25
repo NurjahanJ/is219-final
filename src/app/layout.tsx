@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { IBM_Plex_Mono, Montserrat } from "next/font/google";
 import { MainNav } from "@/components/main-nav";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -43,8 +44,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${montserrat.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
-        <MainNav />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+            <MainNav />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

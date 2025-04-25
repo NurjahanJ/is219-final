@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -75,33 +76,31 @@ export function MainNav() {
     <nav 
       className={`flex items-center justify-between w-full py-4 px-2 md:px-8 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-sm shadow-md border-b border-indigo-100' 
-          : 'bg-slate-50 border-b border-border'
+          ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-md border-b border-indigo-100 dark:border-slate-700' 
+          : 'bg-slate-50 dark:bg-slate-900 border-b border-border dark:border-slate-800'
       }`} 
       aria-label="Main navigation"
     >
-      <Link href="/" className="text-xl font-semibold text-indigo-800 hover:text-indigo-600 transition-colors" aria-label="Nurjahan Jhorna home page">
+      <Link href="/" className="text-xl font-semibold text-indigo-800 dark:text-indigo-300 hover:text-indigo-600 dark:hover:text-indigo-200 transition-colors" aria-label="Nurjahan Jhorna home page">
         <span className="font-serif">Nurjahan Jhorna</span>
       </Link>
       
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-6">
-        {routes.map((route) => {
-          const active = isActive(route.href)
-          return (
-            <Link 
-              key={route.href} 
-              href={route.href}
-              onClick={(e) => handleAnchorClick(e, route.href)}
-              aria-current={active ? 'page' : undefined}
-              className={`text-base font-medium transition-colors capitalize relative py-1 ${active 
-                ? 'text-indigo-800 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600' 
-                : 'text-slate-700 hover:text-indigo-600'}`}
-            >
-              {route.label}
-            </Link>
-          )
-        })}
+      <div className="hidden md:flex gap-6 items-center">
+        {routes.map((route, index) => (
+          <Link 
+            key={route.href} 
+            href={route.href}
+            onClick={(e) => handleAnchorClick(e, route.href)}
+            aria-current={isActive(route.href) ? 'page' : undefined}
+            className={`text-base font-medium transition-colors capitalize relative py-1 ${isActive(route.href) 
+              ? 'text-indigo-800 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600' 
+              : 'text-slate-700 hover:text-indigo-600'}`}
+          >
+            {route.label}
+          </Link>
+        ))}
+        <ThemeToggle />
       </div>
       
       {/* Mobile Navigation - NavDrawer */}
