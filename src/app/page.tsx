@@ -137,50 +137,50 @@ export default function Home() {
         <section id="journey" className="py-16">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-indigo-300 mr-4"></div>
-              <h2 className="text-indigo-900 dark:text-indigo-300 text-3xl md:text-4xl font-serif mb-6">My Journey</h2>
-              <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+              <div className="h-px w-12 bg-indigo-400 dark:bg-indigo-600 mr-4"></div>
+              <h2 className="text-indigo-800 dark:text-indigo-300 text-3xl md:text-4xl font-serif mb-6">My Journey</h2>
+              <div className="h-px w-12 bg-indigo-400 dark:bg-indigo-600 ml-4"></div>
             </div>
-            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-light">
+            <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
               The path of knowledge that has shaped my understanding and perspective in the digital realm.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-indigo-600 hover:shadow-md transition-shadow">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-indigo-600 dark:border-l-indigo-400 hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-full text-indigo-700 dark:text-indigo-300">
+                <div className="p-3 bg-indigo-50 dark:bg-indigo-900/50 rounded-full text-indigo-700 dark:text-indigo-300">
                   <Compass className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-medium text-indigo-800 dark:text-indigo-300 font-serif">Education</h3>
               </div>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light">
                 Currently pursuing a degree in Web & Information Systems, where I'm building a strong foundation in both the technical and design aspects of web development. My coursework includes UX design principles, web programming, and information architecture.  
               </p>
             </article>
             
             {/* Development Card */}
-            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-purple-600 hover:shadow-md transition-shadow">
+            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-purple-600 dark:border-l-purple-400 hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-full text-purple-700 dark:text-purple-300">
+                <div className="p-3 bg-purple-50 dark:bg-purple-900/50 rounded-full text-purple-700 dark:text-purple-300">
                   <Code className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-medium text-purple-800 dark:text-purple-300 font-serif">Development</h3>
               </div>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light">
                 Continuously expanding my development skills through hands-on projects and self-directed learning. I'm proficient in HTML, CSS, JavaScript, and React, and I'm always exploring new technologies to add to my toolkit. I enjoy the problem-solving aspect of coding and the satisfaction of building functional, responsive websites.
               </p>
             </article>
             
             {/* Design Card */}
-            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-slate-600 hover:shadow-md transition-shadow">
+            <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 border-l-4 border-l-teal-600 dark:border-l-teal-400 hover:shadow-md transition-shadow duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded-full text-slate-700 dark:text-slate-300">
+                <div className="p-3 bg-teal-50 dark:bg-teal-900/50 rounded-full text-teal-700 dark:text-teal-300">
                   <Palette className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-slate-800 dark:text-slate-300 font-serif">Design</h3>
+                <h3 className="text-xl font-medium text-teal-800 dark:text-teal-300 font-serif">Design</h3>
               </div>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light">
                 Developing my UX/UI design skills through coursework and self-directed learning. I'm passionate about creating user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my ideas to life.
               </p>
             </article>
