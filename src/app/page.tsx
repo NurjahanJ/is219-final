@@ -176,57 +176,7 @@ export default function Home() {
       </section>
 
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
-        {/* Core Principles Section - Explorer Values */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
-          <Card className="border-l-4 border-l-primary hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-primary">Adventure Guides</CardTitle>
-              <CardDescription>Navigate with confidence</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-medium-contrast">
-                We chart the course through complex digital terrain, providing expert guidance to help you discover new possibilities and reach your destination.
-              </p>
-            </CardContent>
-          </Card>
 
-          <Card className="border-l-4 border-l-secondary hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-secondary">Innovative Pathfinders</CardTitle>
-              <CardDescription>Cutting-edge solutions</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-medium-contrast">
-                Our team explores the frontiers of technology to create custom solutions that open new horizons and transform how you interact with the digital world.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-accent hover:shadow-lg transition-shadow duration-300">
-            <CardHeader>
-              <CardTitle className="text-accent">Reliable Partners</CardTitle>
-              <CardDescription>Steadfast support on every journey</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-medium-contrast">
-                We stand by your side throughout your expedition, providing dependable support and expertise to overcome challenges and celebrate victories.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Invitation Section - Friendly Call to Action */}
-        <div className="text-center space-y-8 py-16">
-          <h2 className="text-primary text-3xl font-semibold max-w-3xl mx-auto">
-            Ready to embark on your next digital adventure?
-          </h2>
-          <p className="text-lg text-medium-contrast max-w-2xl mx-auto">
-            Join us as we explore new frontiers and discover innovative solutions tailored to your unique journey.
-          </p>
-          <Button size="lg" className="text-base bg-secondary text-text-dark hover:bg-secondary-600 hover:scale-105 transition-all duration-300">
-            Start Your Expedition
-          </Button>
-        </div>
       </main>
     </div>
   );
