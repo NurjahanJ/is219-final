@@ -22,6 +22,12 @@ export const projects: Project[] = [
     description: "A simple but well-designed calculator app built using Flutter.",
     tags: ["Flutter", "Dart", "Mobile UI"],
     github: "https://github.com/NurjahanJ/flutter_calculator"
+  },
+  {
+    title: "Story AI",
+    description: "An interactive storytelling application that uses AI to generate personalized stories based on user input.",
+    tags: ["AI", "Python", "NLP", "Interactive"],
+    github: "https://github.com/NurjahanJ/story_ai"
   }
 ];
 
