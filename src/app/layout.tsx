@@ -19,18 +19,27 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Outlaw AI Consultancy",
-    template: "%s | Outlaw AI Consultancy",
+    default: "My Digital Map | Nurjahan Jhorna",
+    template: "%s | My Digital Map",
   },
-  description: "Challenging the AI status quo with radical honesty and evidence-based disruption",
-  authors: [{ name: "Outlaw AI Consultancy" }],
-  keywords: ["AI consultancy", "digital transformation", "disruptive innovation"],
+  description: "Exploring the digital frontier through web development and design - Nurjahan Jhorna's portfolio",
+  authors: [{ name: "Nurjahan Jhorna" }],
+  keywords: ["web development", "frontend developer", "portfolio", "digital explorer", "UI/UX design"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "32x32" },
+      { url: "/favicon.svg?v=2", type: "image/svg+xml" }
+    ],
+    apple: [
+      { url: "/favicon.svg?v=2" }
+    ],
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#111827" },
+    { media: "(prefers-color-scheme: light)", color: "#0a1128" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1128" },
   ],
   width: "device-width",
   initialScale: 1,
