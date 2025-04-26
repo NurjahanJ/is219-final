@@ -1,51 +1,189 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Github, Linkedin, Mail, Star, Code, Palette, Layout, Users, PenTool } from "lucide-react";
+import Image from "next/image";
+import { Github, Linkedin, Mail, Star, Code, Palette, Layout, Users, PenTool, Compass, Map, Mountain, Zap } from "lucide-react";
 
 export default function About() {
+  const [flippedCard, setFlippedCard] = useState<number | null>(null);
+  
+  // Handle card flip
+  const handleCardFlip = (index: number) => {
+    setFlippedCard(flippedCard === index ? null : index);
+  };
+  
   return (
-    <div className="min-h-screen px-4 py-12 md:py-20 pt-16 md:pt-24 relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-1/3 left-1/4 text-indigo-200 dark:text-indigo-800 opacity-10" aria-hidden="true">
-        <Star className="w-16 h-16" />
+    <div className="min-h-screen relative overflow-hidden bg-[#0a1128] text-slate-100">
+      {/* Starry night sky background */}
+      <div className="absolute inset-0 z-0">
+        {/* Deep blue gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#1c2e4a] to-[#0a1128]"></div>
+        
+        {/* Stars - small */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 100 }).map((_, i) => (
+            <div 
+              key={`star-sm-${i}`}
+              className="absolute rounded-full bg-white"
+              style={{
+                width: `${Math.random() * 2 + 1}px`,
+                height: `${Math.random() * 2 + 1}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: Math.random() * 0.7 + 0.3,
+                animation: `twinkle ${Math.random() * 5 + 3}s ease-in-out infinite ${Math.random() * 5}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Stars - medium */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 50 }).map((_, i) => (
+            <div 
+              key={`star-md-${i}`}
+              className="absolute rounded-full bg-white"
+              style={{
+                width: `${Math.random() * 3 + 2}px`,
+                height: `${Math.random() * 3 + 2}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: Math.random() * 0.7 + 0.3,
+                animation: `twinkle ${Math.random() * 7 + 4}s ease-in-out infinite ${Math.random() * 5}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Shooting stars */}
+        <div className="absolute inset-0 overflow-hidden">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div 
+              key={`shooting-star-${i}`}
+              className="absolute h-px bg-gradient-to-r from-transparent via-white to-transparent"
+              style={{
+                width: `${Math.random() * 150 + 50}px`,
+                top: `${Math.random() * 70}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: 0,
+                transform: `rotate(${Math.random() * 45 + 15}deg)`,
+                animation: `shootingStars ${Math.random() * 10 + 10}s linear infinite ${Math.random() * 15}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Distant nebula/galaxy effect */}
+        <div 
+          className="absolute rounded-full opacity-10 blur-2xl"
+          style={{
+            width: '300px',
+            height: '300px',
+            top: '30%',
+            right: '15%',
+            background: 'radial-gradient(circle, rgba(147,112,219,0.5) 0%, rgba(76,104,186,0.3) 50%, rgba(49,46,129,0) 100%)',
+          }}
+        ></div>
+        <div 
+          className="absolute rounded-full opacity-10 blur-2xl"
+          style={{
+            width: '250px',
+            height: '250px',
+            bottom: '20%',
+            left: '10%',
+            background: 'radial-gradient(circle, rgba(72,209,204,0.5) 0%, rgba(45,149,150,0.3) 50%, rgba(25,113,120,0) 100%)',
+          }}
+        ></div>
       </div>
-      <div className="absolute bottom-1/4 right-1/4 bg-indigo-100 dark:bg-indigo-800 w-32 h-32 rounded-full opacity-20" aria-hidden="true"></div>
-      <div className="absolute top-1/2 right-1/3 bg-purple-100 dark:bg-purple-800 w-24 h-24 rounded-full opacity-10" aria-hidden="true"></div>
       
-      <main className="container mx-auto max-w-5xl relative z-10" id="main-content">
+      <main className="container mx-auto max-w-6xl relative z-10 pt-24 px-4" id="main-content">
         {/* Header Section with Photo and Intro */}
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-16 bg-gradient-to-br from-indigo-50 dark:from-indigo-950 to-transparent p-8 rounded-2xl border border-indigo-100 dark:border-indigo-800">
-          {/* Profile Photo - Using a placeholder */}
-          <div className="relative w-48 h-48 md:w-64 md:h-64 overflow-hidden rounded-full border-4 border-indigo-200 dark:border-indigo-700 shadow-xl bg-white dark:bg-slate-800 flex items-center justify-center transition-transform duration-300" aria-hidden="true">
-            <div className="text-4xl md:text-5xl font-serif text-indigo-700 dark:text-indigo-300">NJ</div>
-            {/* Decorative elements */}
-            <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-purple-200 dark:bg-purple-800 rounded-full opacity-20"></div>
-            <div className="absolute -top-2 -left-2 w-12 h-12 bg-indigo-200 dark:bg-indigo-800 rounded-full opacity-20"></div>
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16 mb-20">
+          {/* Profile Photo with rough-corner card and neon accent */}
+          <div className="relative w-full max-w-sm lg:max-w-md">
+            <div className="relative group">
+              {/* Rough-edged card effect */}
+              <div className="absolute inset-0 bg-zinc-900 rounded-lg transform rotate-1 scale-[1.02] -z-10"></div>
+              
+              {/* Neon border effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-cyan-400 opacity-70 rounded-lg blur-sm transform scale-[1.03] -z-20 group-hover:blur-md group-hover:opacity-80 transition-all duration-500"></div>
+              
+              {/* Photo container with rugged frame */}
+              <div className="relative overflow-hidden rounded-lg bg-zinc-700 p-1">
+                {/* Placeholder photo - replace with your actual photo */}
+                <div className="aspect-[4/5] w-full bg-zinc-600 rounded-md overflow-hidden">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zinc-700 to-zinc-800">
+                    <div className="relative flex items-center justify-center">
+                      <Compass className="w-24 h-24 text-teal-400 opacity-20" />
+                      <div className="absolute text-5xl font-bold text-white">NJ</div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Rugged corners */}
+                <div className="absolute top-0 left-0 w-12 h-12 bg-zinc-800 transform -translate-x-6 -translate-y-6 rotate-45"></div>
+                <div className="absolute bottom-0 right-0 w-16 h-16 bg-zinc-800 transform translate-x-8 translate-y-8 rotate-45"></div>
+              </div>
+            </div>
+            
+            {/* Social links */}
+            <div className="flex justify-center mt-6 gap-4">
+              <a href="https://github.com/NurjahanJ" target="_blank" rel="noopener noreferrer" 
+                className="p-3 bg-zinc-700 hover:bg-zinc-600 rounded-full transition-colors duration-300 group">
+                <Github className="w-5 h-5 text-teal-400 group-hover:text-teal-300" />
+                <span className="sr-only">GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/nurjahan-jhorna" target="_blank" rel="noopener noreferrer" 
+                className="p-3 bg-zinc-700 hover:bg-zinc-600 rounded-full transition-colors duration-300 group">
+                <Linkedin className="w-5 h-5 text-teal-400 group-hover:text-teal-300" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a href="mailto:contact@example.com" 
+                className="p-3 bg-zinc-700 hover:bg-zinc-600 rounded-full transition-colors duration-300 group">
+                <Mail className="w-5 h-5 text-teal-400 group-hover:text-teal-300" />
+                <span className="sr-only">Email</span>
+              </a>
+            </div>
           </div>
           
-          {/* Name and Intro */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-indigo-900 dark:text-indigo-300 text-4xl md:text-5xl font-serif mb-4 relative inline-block">
-              Nurjahan Jhorna
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-transparent rounded-full"></span>
-            </h1>
-            <h2 className="text-purple-700 dark:text-purple-400 text-xl md:text-2xl mb-6 font-light">Web & Information Systems Student</h2>
-            <p className="text-lg text-slate-700 dark:text-slate-300 mb-6 leading-relaxed font-light">
-              I'm dedicated to creating thoughtful and insightful digital experiences through a blend of UX/UI design and web development. 
-              My academic journey has equipped me with a foundation of knowledge and analytical thinking that I apply to every project.
-              I'm continually seeking deeper understanding of technologies and design principles to enhance my ability to communicate complex ideas simply.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          {/* Storytelling text with larger spacing */}
+          <div className="flex-1 space-y-8">
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 tracking-tight">
+                Nurjahan Jhorna
+              </h1>
+              <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-transparent rounded-full mb-6"></div>
+              <h2 className="text-xl md:text-2xl text-teal-400 font-medium mb-6">Digital Explorer & Frontend Developer</h2>
+            </div>
+            
+            <div className="space-y-6">
+              <p className="text-xl leading-relaxed text-slate-300">
+                Venturing through the digital wilderness, I chart new territories in web development and design. My journey began with a curiosity about how technology can create meaningful experiences.              
+              </p>
+              
+              <p className="text-xl leading-relaxed text-slate-300">
+                As a Web & Information Systems student, I navigate the intersection of code, design, and user experience—mapping out solutions that are both functional and visually compelling.
+              </p>
+              
+              <p className="text-xl leading-relaxed text-slate-300">
+                Each project is an expedition into new possibilities, where I apply my growing toolkit of technologies to craft digital experiences that resonate and inspire.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap gap-4 pt-4">
               <Link 
                 href="/#projects" 
-                className="px-6 py-3 bg-indigo-700 dark:bg-indigo-900 text-white rounded-lg hover:bg-indigo-800 dark:hover:bg-indigo-700 transition-all duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:ring-offset-2 font-medium"
+                className="px-8 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-md transition-all duration-300 shadow-lg shadow-teal-900/20 font-medium flex items-center gap-2 group"
               >
-                View My Work
+                <span>Explore My Work</span>
+                <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
               </Link>
               <Link 
                 href="/" 
-                className="px-6 py-3 border-2 border-indigo-600 dark:border-indigo-400 text-indigo-700 dark:text-indigo-400 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:text-indigo-800 dark:hover:text-indigo-300 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:ring-offset-2 font-medium"
+                className="px-8 py-3 border-2 border-zinc-600 hover:border-zinc-500 text-slate-200 rounded-md hover:bg-zinc-700/50 transition-all duration-300 font-medium"
               >
-                Back to Home
+                Back to Base Camp
               </Link>
             </div>
           </div>
@@ -84,6 +222,8 @@ export default function About() {
           </div>
         </div>
         
+
+        
         {/* Skills Section */}
         <div className="mb-16">
           <div className="flex items-center justify-center mb-8">
@@ -96,7 +236,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-indigo-100 dark:border-indigo-400 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-full text-indigo-700 dark:text-indigo-300">
+                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-full text-indigo-700 dark:text-indigo-400">
                     <Code className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-medium text-indigo-800 dark:text-indigo-300 font-serif">Development</h3>
