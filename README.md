@@ -2,6 +2,10 @@
 
 A modern, responsive portfolio website built with the Explorer brand archetype, featuring a starry night background with soft blue accents. This portfolio showcases projects, skills, and professional journey in an immersive, navigation-themed format that invites visitors to explore my digital landscape.
 
+## 🌐 Live Demo
+
+Explore the live site: [https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/](https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/)
+
 ## 🧭 Brand Archetype: Explorer
 
 This portfolio embodies the Explorer archetype with:
@@ -89,9 +93,6 @@ This portfolio embodies the Explorer archetype with:
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 🌐 Live Demo
-
-Explore the live site: [https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/](https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/)
 
 ## 🤝 Contributing
 
