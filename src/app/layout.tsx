@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   keywords: ["web development", "frontend developer", "portfolio", "digital explorer", "UI/UX design"],
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon.svg", type: "image/svg+xml" }
+      { url: "/favicon.ico?v=2", sizes: "32x32" },
+      { url: "/favicon.svg?v=2", type: "image/svg+xml" }
     ],
     apple: [
-      { url: "/favicon.svg" }
+      { url: "/favicon.svg?v=2" }
     ],
   },
 };
