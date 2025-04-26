@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
-import { Github, Linkedin, Mail, Send, BookOpen, MessageSquare } from "lucide-react";
+import { Github, Linkedin, Mail, Send, BookOpen, MessageSquare, Compass, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -64,25 +64,44 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-indigo-50 dark:from-slate-900 dark:to-indigo-950 px-4 py-12 md:py-20 pt-16 md:pt-24 relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-1/4 right-1/4 bg-indigo-100 dark:bg-indigo-700 w-32 h-32 rounded-full opacity-20" aria-hidden="true"></div>
-      <div className="absolute bottom-1/3 left-1/3 bg-purple-100 dark:bg-purple-700 w-24 h-24 rounded-full opacity-10" aria-hidden="true"></div>
+    <div className="min-h-screen bg-zinc-900 px-4 py-12 md:py-20 pt-16 md:pt-24 relative overflow-hidden">
+      {/* Starry background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(100)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: `${Math.random() * 2 + 1}px`,
+              height: `${Math.random() * 2 + 1}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: Math.random() * 0.7 + 0.3,
+              animation: `twinkle ${Math.random() * 5 + 5}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Larger glowing stars */}
+      <div className="absolute top-1/4 right-1/4 bg-blue-400 w-2 h-2 rounded-full opacity-70 blur-sm" aria-hidden="true"></div>
+      <div className="absolute bottom-1/3 left-1/3 bg-blue-300 w-3 h-3 rounded-full opacity-50 blur-sm" aria-hidden="true"></div>
       
       <main className="container mx-auto max-w-5xl relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
-            <MessageSquare className="h-6 w-6 text-indigo-700 dark:text-indigo-300" aria-hidden="true" />
+          <div className="inline-flex items-center justify-center p-3 bg-blue-900/30 backdrop-blur-sm rounded-full mb-4 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+            <Compass className="h-6 w-6 text-blue-400" aria-hidden="true" />
           </div>
           <div className="flex items-center justify-center mb-4">
-            <div className="h-px w-12 bg-indigo-300 mr-4"></div>
-            <h1 className="text-indigo-900 dark:text-indigo-300 text-4xl md:text-5xl font-serif mb-2">Let's Connect</h1>
-            <div className="h-px w-12 bg-indigo-300 ml-4"></div>
+            <div className="h-px w-12 bg-blue-500/50 mr-4"></div>
+            <h1 className="text-blue-300 text-4xl md:text-5xl font-bold mb-2 tracking-wide">Chart a Course</h1>
+            <div className="h-px w-12 bg-blue-500/50 ml-4"></div>
           </div>
-          <p className="text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-            I'm always open to thoughtful discussions, sharing knowledge, and exploring ideas about UX and web design. 
-            Let's collaborate on creating meaningful digital experiences that illuminate and educate.
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+            Ready to embark on a digital journey together? I'm always exploring new horizons in web development and design.
+            Let's navigate the digital landscape and create meaningful experiences that guide and inspire.
           </p>
         </div>
 
@@ -90,10 +109,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Methods Column */}
           <div className="order-2 lg:order-1">
-            <Card className="border-l-4 border-l-indigo-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white dark:bg-slate-800 dark:border-indigo-400">
+            <Card className="border-l-4 border-l-blue-500 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-zinc-800/60 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
               <CardHeader>
-                <CardTitle className="text-indigo-800 dark:text-indigo-300 text-2xl font-serif">Connect & Discuss</CardTitle>
-                <CardDescription className="text-slate-600 dark:text-slate-400 font-light">
+                <CardTitle className="text-blue-300 text-2xl font-bold">Navigation Points</CardTitle>
+                <CardDescription className="text-slate-400 font-light">
                   Reach out through these platforms to start a meaningful conversation.
                 </CardDescription>
               </CardHeader>
@@ -104,12 +123,12 @@ export default function Contact() {
                   className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
                   aria-label="Send me an email"
                 >
-                  <div className="p-3 bg-white dark:bg-slate-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Mail className="h-6 w-6 text-slate-700 dark:text-slate-300" aria-hidden="true" />
+                  <div className="p-3 bg-zinc-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 border border-blue-500/20 group-hover:border-blue-500/40">
+                    <Mail className="h-6 w-6 text-blue-400 group-hover:text-blue-300" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-primary-800 dark:text-slate-300">Email</h3>
-                    <p className="text-sm text-primary-600 dark:text-slate-400">Send me a message</p>
+                    <h3 className="font-medium text-blue-300">Email</h3>
+                    <p className="text-sm text-slate-400">Send me a message</p>
                   </div>
                 </a>
 
@@ -118,15 +137,15 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/nurjahan-jhorna" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg bg-purple-50 dark:bg-purple-900/30 hover:bg-purple-100 dark:hover:bg-purple-800/40 transition-colors duration-300 group"
+                  className="flex items-center p-4 rounded-lg bg-zinc-800/40 hover:bg-zinc-700/60 transition-colors duration-300 group border border-blue-500/10 hover:border-blue-500/30"
                   aria-label="Visit my LinkedIn profile"
                 >
-                  <div className="p-3 bg-white dark:bg-slate-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Linkedin className="h-6 w-6 text-purple-700 dark:text-purple-300" aria-hidden="true" />
+                  <div className="p-3 bg-zinc-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 border border-blue-500/20 group-hover:border-blue-500/40">
+                    <Linkedin className="h-6 w-6 text-blue-400 group-hover:text-blue-300" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-secondary-800 dark:text-purple-300">LinkedIn</h3>
-                    <p className="text-sm text-secondary-600 dark:text-purple-400">Connect professionally</p>
+                    <h3 className="font-medium text-blue-300">LinkedIn</h3>
+                    <p className="text-sm text-slate-400">Connect professionally</p>
                   </div>
                 </a>
 
@@ -138,21 +157,22 @@ export default function Contact() {
                   className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
                   aria-label="Visit my GitHub profile"
                 >
-                  <div className="p-3 bg-white dark:bg-slate-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                    <Github className="h-6 w-6 text-indigo-700 dark:text-indigo-300" aria-hidden="true" />
+                  <div className="p-3 bg-zinc-700 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 border border-blue-500/20 group-hover:border-blue-500/40">
+                    <Github className="h-6 w-6 text-blue-400 group-hover:text-blue-300" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-primary-800 dark:text-indigo-300">GitHub</h3>
-                    <p className="text-sm text-primary-600 dark:text-indigo-400">View my code repositories</p>
+                    <h3 className="font-medium text-blue-300">GitHub</h3>
+                    <p className="text-sm text-slate-400">View my code repositories</p>
                   </div>
                 </a>
 
                 {/* Nature-inspired decorative elements */}
-                <div className="relative h-40 mt-8 overflow-hidden rounded-lg bg-primary-100 flex items-center justify-center">
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary-200 rounded-full opacity-30"></div>
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-accent-200 rounded-full opacity-30"></div>
-                  <p className="text-primary-700 font-medium text-center relative z-10 px-6">
-                    Looking forward to exploring new opportunities and creating meaningful digital experiences together.
+                <div className="relative h-40 mt-8 overflow-hidden rounded-lg bg-zinc-800/40 flex items-center justify-center border border-blue-500/20 backdrop-blur-sm">
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500 rounded-full opacity-10 blur-xl"></div>
+                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-400 rounded-full opacity-10 blur-xl"></div>
+                  <Map className="absolute opacity-10 w-20 h-20 text-blue-400" />
+                  <p className="text-blue-300 font-medium text-center relative z-10 px-6">
+                    Looking forward to charting new digital territories and navigating exciting opportunities together.
                   </p>
                 </div>
               </CardContent>
@@ -161,17 +181,17 @@ export default function Contact() {
 
           {/* Contact Form Column */}
           <div className="order-1 lg:order-2">
-            <Card className="border-l-4 border-l-purple-600 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-white dark:bg-slate-800 dark:border-purple-400">
+            <Card className="border-l-4 border-l-blue-500 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-zinc-800/60 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
               <CardHeader>
-                <CardTitle className="text-purple-800 dark:text-purple-300 text-2xl font-serif">Share Your Thoughts</CardTitle>
-                <CardDescription className="text-slate-600 dark:text-slate-400 font-light">
+                <CardTitle className="text-blue-300 text-2xl font-bold">Send a Signal</CardTitle>
+                <CardDescription className="text-slate-400 font-light">
                   Have a question or idea you'd like to discuss? I'd love to hear from you.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-purple-700 dark:text-purple-300 font-light">Name</Label>
+                    <Label htmlFor="name" className="text-blue-300 font-light">Name</Label>
                     <Input
                       id="name"
                       name="name"
@@ -180,13 +200,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="border-purple-200 focus:border-purple-300 focus:ring-purple-200"
+                      className="bg-zinc-700/60 border-blue-500/30 focus:border-blue-400/50 focus:ring-blue-400/20 text-slate-300"
                       aria-label="Your name"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-purple-700 dark:text-purple-300 font-light">Email</Label>
+                    <Label htmlFor="email" className="text-blue-300 font-light">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -195,13 +215,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="border-purple-200 focus:border-purple-300 focus:ring-purple-200"
+                      className="bg-zinc-700/60 border-blue-500/30 focus:border-blue-400/50 focus:ring-blue-400/20 text-slate-300"
                       aria-label="Your email address"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-purple-700 dark:text-purple-300 font-light">Message</Label>
+                    <Label htmlFor="message" className="text-blue-300 font-light">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -209,14 +229,14 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="min-h-[150px] border-purple-200 focus:border-purple-300 focus:ring-purple-200"
+                      className="min-h-[150px] bg-zinc-700/60 border-blue-500/30 focus:border-blue-400/50 focus:ring-blue-400/20 text-slate-300"
                       aria-label="Your message"
                     />
                   </div>
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-purple-700 hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-700 text-white transition-all duration-300"
+                    className="w-full bg-blue-600/80 hover:bg-blue-500/80 text-white transition-all duration-300 backdrop-blur-sm border border-blue-400/30"
                     disabled={isSubmitting}
                     aria-label="Send message"
                   >
@@ -238,14 +258,14 @@ export default function Contact() {
                   
                   {/* Success Message */}
                   {submitSuccess && (
-                    <div className="p-3 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 text-indigo-800 dark:text-indigo-300 rounded-md font-light">
+                    <div className="p-3 bg-blue-900/30 border border-blue-500/30 text-blue-300 rounded-md font-light backdrop-blur-sm">
                       Thank you for your message. I appreciate you taking the time to share your thoughts and will respond thoughtfully soon.
                     </div>
                   )}
                   
                   {/* Error Message */}
                   {submitError && (
-                    <div className="p-3 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 text-red-800 dark:text-red-300 rounded-md font-light">
+                    <div className="p-3 bg-red-900/30 border border-red-500/30 text-red-300 rounded-md font-light backdrop-blur-sm">
                       {submitError}
                     </div>
                   )}
@@ -260,27 +280,27 @@ export default function Contact() {
           <nav className="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
             <Link 
               href="/" 
-              className="text-indigo-700 hover:text-indigo-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50"
+              className="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-blue-900/30"
             >
-              <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
+              <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
               Home
             </Link>
             <Link 
               href="/about" 
-              className="text-indigo-700 hover:text-indigo-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50"
+              className="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-blue-900/30"
             >
-              <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
+              <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
               About
             </Link>
             <Link 
               href="/#projects" 
-              className="text-indigo-700 hover:text-indigo-900 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50"
+              className="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-blue-900/30"
             >
-              <span className="w-1 h-1 bg-indigo-500 rounded-full"></span>
+              <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
               My Playground
             </Link>
           </nav>
-          <p className="text-sm text-slate-600 dark:text-slate-400 mt-6 font-light">&copy; 2025 Nurjahan Jhorna. Illuminating digital wisdom.</p>
+          <p className="text-sm text-slate-400 mt-6 font-light">&copy; 2025 Nurjahan Jhorna. Charting digital frontiers.</p>
         </div>
       </main>
     </div>
