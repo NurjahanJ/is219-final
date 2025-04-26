@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Github, Linkedin, Mail, Star, Code, Palette, Layout, Users, PenTool, Compass, Map, Mountain, Zap } from "lucide-react";
+import portfolioPic from "../../porfolio_pic.jpg";
 
 export default function About() {
   const [flippedCard, setFlippedCard] = useState<number | null>(null);
@@ -56,65 +57,7 @@ export default function About() {
           ))}
         </div>
         
-        {/* Shooting stars */}
-        <div className="absolute inset-0 overflow-hidden">
-          {Array.from({ length: 8 }).map((_, i) => {
-            // Generate random values for each star
-            const starWidth = Math.random() * 200 + 100;
-            const angle = Math.random() * 60 - 10; // -10 to 50 degrees
-            const travelX = Math.random() * -400 - 200; // -200 to -600px
-            const travelY = Math.random() * 300 + 50; // 50 to 350px
-            const duration = Math.random() * 6 + 6; // 6-12 seconds
-            const delay = Math.random() * 20; // 0-20 seconds delay
-            const topPosition = Math.random() * 60; // 0-60% from top
-            const leftPosition = Math.random() * 80 + 20; // 20-100% from left
-            const brightness = Math.random() * 30 + 70; // 70-100% brightness
-            const starSize = Math.random() * 3 + 2; // 2-5px star size
-            
-            return (
-              <div 
-                key={`shooting-star-${i}`}
-                className="absolute"
-                style={{
-                  '--star-width': `${starWidth}px`,
-                  '--travel-distance-x': `${travelX}px`,
-                  '--travel-distance-y': `${travelY}px`,
-                  top: `${topPosition}%`,
-                  left: `${leftPosition}%`,
-                  opacity: 0,
-                  transform: `rotate(${angle}deg)`,
-                  animation: `shootingStars ${duration}s ease-out infinite ${delay}s`,
-                  pointerEvents: 'none',
-                } as React.CSSProperties}
-              >
-                {/* The actual star */}
-                <div 
-                  className="absolute rounded-full bg-white z-10"
-                  style={{
-                    width: `${starSize}px`,
-                    height: `${starSize}px`,
-                    filter: `brightness(${brightness}%) blur(0.5px)`,
-                    boxShadow: '0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4)'
-                  }}
-                />
-                
-                {/* The trailing tail */}
-                <div 
-                  className="absolute h-[1.5px] bg-gradient-to-l from-transparent via-white to-white"
-                  style={{
-                    width: '0px', // Start with 0 width, will be animated
-                    left: `${starSize/2}px`,
-                    top: `${starSize/2}px`,
-                    transformOrigin: 'left center',
-                    filter: `brightness(${brightness}%)`,
-                    boxShadow: '0 0 4px rgba(255, 255, 255, 0.6), 0 0 8px rgba(255, 255, 255, 0.3)',
-                    animation: `starTail ${duration}s ease-out infinite ${delay}s`
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
+        {/* Shooting stars animation removed */}
         
         {/* Distant nebula/galaxy effect */}
         <div 
@@ -149,18 +92,18 @@ export default function About() {
               <div className="absolute inset-0 bg-zinc-900 rounded-lg transform rotate-1 scale-[1.02] -z-10"></div>
               
               {/* Neon border effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-cyan-400 opacity-70 rounded-lg blur-sm transform scale-[1.03] -z-20 group-hover:blur-md group-hover:opacity-80 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 opacity-70 rounded-lg blur-sm transform scale-[1.03] -z-20 group-hover:blur-md group-hover:opacity-80 transition-all duration-500"></div>
               
               {/* Photo container with rugged frame */}
               <div className="relative overflow-hidden rounded-lg bg-zinc-700 p-1">
-                {/* Placeholder photo - replace with your actual photo */}
-                <div className="aspect-[4/5] w-full bg-zinc-600 rounded-md overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-zinc-700 to-zinc-800">
-                    <div className="relative flex items-center justify-center">
-                      <Compass className="w-24 h-24 text-teal-400 opacity-20" />
-                      <div className="absolute text-5xl font-bold text-white">NJ</div>
-                    </div>
-                  </div>
+                {/* Portfolio picture */}
+                <div className="aspect-[4/5] w-full rounded-md overflow-hidden">
+                  <Image 
+                    src={portfolioPic} 
+                    alt="Nurjahan Jhorna" 
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
                 
                 {/* Rugged corners */}
@@ -173,17 +116,17 @@ export default function About() {
             <div className="flex justify-center mt-6 gap-4">
               <a href="https://github.com/NurjahanJ" target="_blank" rel="noopener noreferrer" 
                 className="p-3 bg-zinc-700 hover:bg-zinc-600 rounded-full transition-colors duration-300 group">
-                <Github className="w-5 h-5 text-teal-400 group-hover:text-teal-300" />
+                <Github className="w-5 h-5 text-blue-400 group-hover:text-blue-300" />
                 <span className="sr-only">GitHub</span>
               </a>
               <a href="https://linkedin.com/in/nurjahan-jhorna" target="_blank" rel="noopener noreferrer" 
                 className="p-3 bg-zinc-700 hover:bg-zinc-600 rounded-full transition-colors duration-300 group">
-                <Linkedin className="w-5 h-5 text-teal-400 group-hover:text-teal-300" />
+                <Linkedin className="w-5 h-5 text-blue-400 group-hover:text-blue-300" />
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a href="mailto:contact@example.com" 
                 className="p-3 bg-zinc-700 hover:bg-zinc-600 rounded-full transition-colors duration-300 group">
-                <Mail className="w-5 h-5 text-teal-400 group-hover:text-teal-300" />
+                <Mail className="w-5 h-5 text-blue-400 group-hover:text-blue-300" />
                 <span className="sr-only">Email</span>
               </a>
             </div>
@@ -195,8 +138,8 @@ export default function About() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 tracking-tight">
                 Nurjahan Jhorna
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-transparent rounded-full mb-6"></div>
-              <h2 className="text-xl md:text-2xl text-teal-400 font-medium mb-6">Digital Explorer & Frontend Developer</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-6"></div>
+              <h2 className="text-xl md:text-2xl text-blue-400 font-medium mb-6">Digital Explorer & Frontend Developer</h2>
             </div>
             
             <div className="space-y-6">
@@ -216,7 +159,7 @@ export default function About() {
             <div className="flex flex-wrap gap-4 pt-4">
               <Link 
                 href="/#projects" 
-                className="px-8 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-md transition-all duration-300 shadow-lg shadow-teal-900/20 font-medium flex items-center gap-2 group"
+                className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-md transition-all duration-300 shadow-lg shadow-blue-900/20 font-medium flex items-center gap-2 group"
               >
                 <span>Explore My Work</span>
                 <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
@@ -231,116 +174,113 @@ export default function About() {
           </div>
         </div>
 
-        {/* Main Headline with Soft Blue Glow */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-wide" style={{
-            textShadow: '0 0 15px rgba(135, 206, 235, 0.6), 0 0 30px rgba(135, 206, 235, 0.4), 0 0 45px rgba(135, 206, 235, 0.2)'
-          }}>
-            Charting New Frontiers
-          </h2>
-        </div>
+        {/* Main headline removed */}
         
-        {/* About Me Section */}
+        {/* About Me Section - Explorer Theme */}
         <div className="mb-16">
           <div className="flex items-center justify-center mb-8">
-            <div className="h-px w-12 bg-indigo-300 dark:bg-indigo-600 mr-4"></div>
-            <h2 className="text-3xl md:text-4xl font-serif text-center text-indigo-900 dark:text-indigo-300" id="about">About Me</h2>
-            <div className="h-px w-12 bg-indigo-300 dark:bg-indigo-600 ml-4"></div>
+            <div className="h-px w-12 bg-blue-300 dark:bg-blue-600 mr-4"></div>
+            <h2 className="text-3xl md:text-4xl font-serif text-center text-blue-400 dark:text-blue-300" id="about" style={{
+              textShadow: '0 0 10px rgba(135, 206, 235, 0.5), 0 0 20px rgba(135, 206, 235, 0.3)'
+            }}>About Me</h2>
+            <div className="h-px w-12 bg-blue-300 dark:bg-blue-600 ml-4"></div>
           </div>
           
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-8 border-l-4 border-l-indigo-600 dark:border-l-indigo-400 hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-8 border-l-4 border-l-blue-500 dark:border-l-blue-400 hover:shadow-lg transition-shadow duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed font-light">
+                <p className="text-slate-200 mb-4 leading-relaxed font-light">
                   As a Web & Information Systems student, I'm at a pivotal point in my academic journey where theory transforms into wisdom. I'm particularly drawn to the intersection of design and functionality, where I can create digital experiences that are both enlightening and accessible.
                 </p>
-                <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed font-light">
+                <p className="text-slate-200 mb-4 leading-relaxed font-light">
                   My academic projects have allowed me to develop a thoughtful approach to front-end technologies like HTML, CSS, JavaScript, and React. I value the analytical process of translating complex concepts into responsive, accessible websites that provide meaningful learning experiences.
                 </p>
               </div>
               <div>
-                <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed font-light">
+                <p className="text-slate-200 mb-4 leading-relaxed font-light">
                   I'm proficient with design tools like Figma, which I use to prototype and refine my ideas before implementation. This methodical approach helps me create cohesive experiences that balance clarity with functionality.
                 </p>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light">
+                <p className="text-slate-200 leading-relaxed font-light">
                   I'm dedicated to continuous learning and growth as a developer and designer. My goal is to expand my knowledge while creating digital solutions that illuminate and educate. I approach each project with thoughtful consideration, always seeking deeper understanding and opportunities to share insights through my work.
                 </p>
               </div>
             </div>
             <div className="mt-6 flex justify-center">
-              <span className="inline-block px-4 py-2 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium">Sage Mindset</span>
+              <span className="inline-block px-4 py-2 bg-blue-900/30 text-blue-300 border border-blue-500/30 rounded-full text-sm font-medium shadow-inner shadow-blue-500/10">Explorer Mindset</span>
             </div>
           </div>
         </div>
         
 
         
-        {/* Skills Section */}
+        {/* Skills Section - Explorer Theme */}
         <div className="mb-16">
           <div className="flex items-center justify-center mb-8">
-            <div className="h-px w-12 bg-indigo-300 dark:bg-indigo-600 mr-4"></div>
-            <h2 className="text-3xl md:text-4xl font-serif text-center text-indigo-900 dark:text-indigo-300" id="skills">Knowledge & Tools</h2>
-            <div className="h-px w-12 bg-indigo-300 dark:bg-indigo-600 ml-4"></div>
+            <div className="h-px w-12 bg-blue-300 dark:bg-blue-600 mr-4"></div>
+            <h2 className="text-3xl md:text-4xl font-serif text-center text-blue-400 dark:text-blue-300" id="skills" style={{
+              textShadow: '0 0 10px rgba(135, 206, 235, 0.5), 0 0 20px rgba(135, 206, 235, 0.3)'
+            }}>Knowledge & Tools</h2>
+            <div className="h-px w-12 bg-blue-300 dark:bg-blue-600 ml-4"></div>
           </div>
           
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-indigo-100 dark:border-indigo-400 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-[rgba(10,17,40,0.5)] p-6 rounded-xl border border-blue-500/20 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-full text-indigo-700 dark:text-indigo-400">
+                  <div className="p-3 bg-blue-900/50 rounded-full text-blue-300">
                     <Code className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-medium text-indigo-800 dark:text-indigo-300 font-serif">Development</h3>
+                  <h3 className="text-xl font-medium text-blue-300 font-serif">Development</h3>
                 </div>
-                <ul className="space-y-3 text-slate-700 dark:text-slate-300">
-                  <li className="flex items-center p-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-indigo-500 dark:bg-indigo-400 rounded-full mr-3"></span>
+                <ul className="space-y-3 text-slate-200">
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">HTML, CSS, JavaScript</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-indigo-500 dark:bg-indigo-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">React & Next.js</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-indigo-500 dark:bg-indigo-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">TypeScript</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-indigo-500 dark:bg-indigo-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">Responsive Web Design</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-indigo-500 dark:bg-indigo-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">Git Version Control</span>
                   </li>
                 </ul>
               </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-purple-100 dark:border-purple-400 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-[rgba(10,17,40,0.5)] p-6 rounded-xl border border-blue-500/20 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-full text-purple-700 dark:text-purple-400">
+                  <div className="p-3 bg-blue-900/50 rounded-full text-blue-300">
                     <Palette className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-medium text-purple-800 dark:text-purple-400 font-serif">Design</h3>
+                  <h3 className="text-xl font-medium text-blue-300 font-serif">Design</h3>
                 </div>
-                <ul className="space-y-3 text-slate-700 dark:text-slate-300">
-                  <li className="flex items-center p-2 hover:bg-purple-50 dark:hover:bg-purple-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full mr-3"></span>
+                <ul className="space-y-3 text-slate-200">
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">Figma</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-purple-50 dark:hover:bg-purple-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">UI/UX Design Principles</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-purple-50 dark:hover:bg-purple-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">Wireframing & Prototyping</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-purple-50 dark:hover:bg-purple-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">Visual Design</span>
                   </li>
-                  <li className="flex items-center p-2 hover:bg-purple-50 dark:hover:bg-purple-900/30 rounded-lg transition-colors">
-                    <span className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full mr-3"></span>
+                  <li className="flex items-center p-2 hover:bg-blue-900/20 rounded-lg transition-colors">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                     <span className="font-light">Tailwind CSS</span>
                   </li>
                 </ul>
