@@ -1,20 +1,20 @@
-# Sage Portfolio
+# My Digital Map - Explorer Portfolio
 
-A modern, responsive portfolio website built with the Sage brand archetype, featuring a thoughtful color palette and a knowledge-focused design. This portfolio showcases projects, skills, and professional journey in an elegant, insightful format.
+A modern, responsive portfolio website built with the Explorer brand archetype, featuring a starry night background with soft blue accents. This portfolio showcases projects, skills, and professional journey in an immersive, navigation-themed format that invites visitors to explore my digital landscape.
 
-## 📚 Brand Archetype: Sage
+## 🧭 Brand Archetype: Explorer
 
-This portfolio embodies the Sage archetype with:
+This portfolio embodies the Explorer archetype with:
 
-- **Thoughtful, calming color palette:**
-  - Deep Indigo (#4338ca) - Primary color representing wisdom and knowledge
-  - Soft Purple (#a78bfa) - Secondary color evoking thoughtfulness and creativity
-  - Muted Teal (#0d9488) - Accent color adding depth and contemplation
-  - Slate Gray (#64748b) - Neutral color providing balance and clarity
+- **Immersive, night sky color palette:**
+  - Deep Navy (#0a1128) - Primary background color representing the night sky
+  - Soft Glowing Blue (#3b82f6) - Primary accent color evoking discovery and guidance
+  - Zinc Gray (#18181b) - Secondary background for cards and containers
+  - Slate Gray (#94a3b8) - Text color providing readability against dark backgrounds
 
-- **Educational content** that invites visitors to explore a journey of knowledge and growth
-- **Organized, structured layout** with clear hierarchy and ample white space
-- **Dark mode support** with carefully selected color combinations for optimal readability
+- **Navigation-themed elements** including a realistic compass favicon and map-inspired components
+- **Immersive starry backgrounds** that create a sense of exploration and wonder
+- **Glass-like UI components** with subtle blue glows that guide the user through the experience
 
 ## 🛠️ Tech Stack
 
@@ -22,23 +22,28 @@ This portfolio embodies the Sage archetype with:
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[shadcn/ui](https://ui.shadcn.com/)** - Accessible UI components
-- **[next-themes](https://github.com/pacocoursey/next-themes)** - Dark mode implementation
+- **[Lucide Icons](https://lucide.dev/)** - Beautiful, consistent icon set
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme implementation
 - **Responsive Design** - Mobile-first approach
 
 ## 📂 Project Structure
 
 ```
 ├── public/                 # Static assets and images
+│   ├── favicon.svg        # Compass favicon in SVG format
+│   └── favicon.ico        # Compass favicon in ICO format
 ├── src/
 │   ├── app/                # Next.js App Router
 │   │   ├── about/          # About page with personal info and journey
+│   │   ├── contact/        # Contact page with form and social links
 │   │   ├── projects/       # Projects showcase page
-│   │   ├── globals.css     # Global CSS with Explorer theme
-│   │   ├── layout.tsx      # Root layout with navigation
+│   │   ├── globals.css     # Global CSS with Explorer theme and animations
+│   │   ├── layout.tsx      # Root layout with navigation and footer
 │   │   └── page.tsx        # Home page
 │   ├── components/         # Reusable components
 │   │   ├── ui/             # UI components from shadcn
-│   │   ├── main-nav.tsx    # Navigation component
+│   │   ├── main-nav.tsx    # Navigation component with Explorer theme
+│   │   ├── footer.tsx      # Global footer with navigation and social links
 │   │   └── ProjectCard.tsx # Project display component
 │   └── lib/                # Utility functions and data
 │       └── projects.ts     # Project data structure
@@ -48,12 +53,14 @@ This portfolio embodies the Sage archetype with:
 ## ✨ Features
 
 - **Responsive Design** - Looks great on all devices from mobile to desktop
-- **About Page** - Personal introduction with knowledge and tools sections
+- **Explorer Theme** - Immersive starry backgrounds with soft blue accents
+- **About Page** - Personal introduction with profile photo and skills sections
 - **Projects Section** - Showcase of work with animated project cards
-- **Contact Page** - Easy way to get in touch
-- **Sage Theme** - Custom color palette inspired by wisdom and knowledge
+- **Contact Page** - Form and social links with Explorer-themed styling
+- **Global Footer** - Consistent navigation and contact options on all pages
+- **Custom Compass Favicon** - Realistic navigation-themed site icon
+- **Glass Morphism Effects** - Modern UI with backdrop blur and transparency
 - **Accessible UI** - Keyboard navigation and screen reader support
-- **Dark Mode Support** - Thoughtfully designed for both light and dark preferences
 
 ## 🚀 Getting Started
 
@@ -102,7 +109,9 @@ To make this portfolio your own:
 
 1. Update personal information in `src/app/about/page.tsx`
 2. Modify project data in `src/lib/projects.ts`
-3. Customize the color theme in `tailwind.config.mjs` if desired
-4. Replace placeholder images with your own in the `public` directory
+3. Customize the Explorer theme colors in `tailwind.config.mjs` if desired
+4. Replace the profile picture in `src/porfolio_pic.jpg`
+5. Update contact information in both `src/app/contact/page.tsx` and `src/components/footer.tsx`
+6. Modify the favicon in `public/favicon.svg` if you want a different theme
 
 ---
