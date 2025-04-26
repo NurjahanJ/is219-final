@@ -289,33 +289,7 @@ export default function About() {
           </div>
         </div>
         
-        {/* Footer Navigation */}
-        <div className="mt-16 text-center">
-          <nav className="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
-            <Link 
-              href="/" 
-              className="text-indigo-700 dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-300 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30"
-            >
-              <span className="w-1 h-1 bg-indigo-500 dark:bg-indigo-400 rounded-full"></span>
-              Home
-            </Link>
-            <Link 
-              href="/#projects" 
-              className="text-indigo-700 dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-300 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30"
-            >
-              <span className="w-1 h-1 bg-indigo-500 dark:bg-indigo-400 rounded-full"></span>
-              My Playground
-            </Link>
-            <Link 
-              href="/contact" 
-              className="text-indigo-700 dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-300 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-indigo-50 dark:hover:bg-indigo-900/30"
-            >
-              <span className="w-1 h-1 bg-indigo-500 dark:bg-indigo-400 rounded-full"></span>
-              Contact
-            </Link>
-          </nav>
-          <p className="text-sm text-slate-600 dark:text-slate-400 mt-6 font-light">&copy; 2025 Nurjahan Jhorna. Illuminating digital wisdom.</p>
-        </div>
+
       </main>
     </div>
   );

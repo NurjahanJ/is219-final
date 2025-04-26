@@ -109,7 +109,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Methods Column */}
           <div className="order-2 lg:order-1">
-            <Card className="border-l-4 border-l-blue-500 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-zinc-800/60 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+            <Card className="border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow duration-300 h-full bg-zinc-800/60 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
               <CardHeader>
                 <CardTitle className="text-blue-300 text-2xl font-bold">Navigation Points</CardTitle>
                 <CardDescription className="text-slate-400 font-light">
@@ -181,7 +181,7 @@ export default function Contact() {
 
           {/* Contact Form Column */}
           <div className="order-1 lg:order-2">
-            <Card className="border-l-4 border-l-blue-500 shadow-md hover:shadow-lg transition-shadow duration-300 h-full bg-zinc-800/60 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
+            <Card className="border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow duration-300 h-full bg-zinc-800/60 backdrop-blur-sm border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
               <CardHeader>
                 <CardTitle className="text-blue-300 text-2xl font-bold">Send a Signal</CardTitle>
                 <CardDescription className="text-slate-400 font-light">
@@ -273,34 +273,6 @@ export default function Contact() {
               </CardContent>
             </Card>
           </div>
-        </div>
-
-        {/* Footer Navigation */}
-        <div className="mt-16 text-center">
-          <nav className="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
-            <Link 
-              href="/" 
-              className="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-blue-900/30"
-            >
-              <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-              Home
-            </Link>
-            <Link 
-              href="/about" 
-              className="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-blue-900/30"
-            >
-              <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-              About
-            </Link>
-            <Link 
-              href="/#projects" 
-              className="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 p-2 rounded-lg flex items-center gap-2 hover:bg-blue-900/30"
-            >
-              <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-              My Playground
-            </Link>
-          </nav>
-          <p className="text-sm text-slate-400 mt-6 font-light">&copy; 2025 Nurjahan Jhorna. Charting digital frontiers.</p>
         </div>
       </main>
     </div>
