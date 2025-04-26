@@ -58,20 +58,62 @@ export default function About() {
         
         {/* Shooting stars */}
         <div className="absolute inset-0 overflow-hidden">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div 
-              key={`shooting-star-${i}`}
-              className="absolute h-px bg-gradient-to-r from-transparent via-white to-transparent"
-              style={{
-                width: `${Math.random() * 150 + 50}px`,
-                top: `${Math.random() * 70}%`,
-                left: `${Math.random() * 100}%`,
-                opacity: 0,
-                transform: `rotate(${Math.random() * 45 + 15}deg)`,
-                animation: `shootingStars ${Math.random() * 10 + 10}s linear infinite ${Math.random() * 15}s`
-              }}
-            />
-          ))}
+          {Array.from({ length: 8 }).map((_, i) => {
+            // Generate random values for each star
+            const starWidth = Math.random() * 200 + 100;
+            const angle = Math.random() * 60 - 10; // -10 to 50 degrees
+            const travelX = Math.random() * -400 - 200; // -200 to -600px
+            const travelY = Math.random() * 300 + 50; // 50 to 350px
+            const duration = Math.random() * 6 + 6; // 6-12 seconds
+            const delay = Math.random() * 20; // 0-20 seconds delay
+            const topPosition = Math.random() * 60; // 0-60% from top
+            const leftPosition = Math.random() * 80 + 20; // 20-100% from left
+            const brightness = Math.random() * 30 + 70; // 70-100% brightness
+            const starSize = Math.random() * 3 + 2; // 2-5px star size
+            
+            return (
+              <div 
+                key={`shooting-star-${i}`}
+                className="absolute"
+                style={{
+                  '--star-width': `${starWidth}px`,
+                  '--travel-distance-x': `${travelX}px`,
+                  '--travel-distance-y': `${travelY}px`,
+                  top: `${topPosition}%`,
+                  left: `${leftPosition}%`,
+                  opacity: 0,
+                  transform: `rotate(${angle}deg)`,
+                  animation: `shootingStars ${duration}s ease-out infinite ${delay}s`,
+                  pointerEvents: 'none',
+                } as React.CSSProperties}
+              >
+                {/* The actual star */}
+                <div 
+                  className="absolute rounded-full bg-white z-10"
+                  style={{
+                    width: `${starSize}px`,
+                    height: `${starSize}px`,
+                    filter: `brightness(${brightness}%) blur(0.5px)`,
+                    boxShadow: '0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4)'
+                  }}
+                />
+                
+                {/* The trailing tail */}
+                <div 
+                  className="absolute h-[1.5px] bg-gradient-to-l from-transparent via-white to-white"
+                  style={{
+                    width: '0px', // Start with 0 width, will be animated
+                    left: `${starSize/2}px`,
+                    top: `${starSize/2}px`,
+                    transformOrigin: 'left center',
+                    filter: `brightness(${brightness}%)`,
+                    boxShadow: '0 0 4px rgba(255, 255, 255, 0.6), 0 0 8px rgba(255, 255, 255, 0.3)',
+                    animation: `starTail ${duration}s ease-out infinite ${delay}s`
+                  }}
+                />
+              </div>
+            );
+          })}
         </div>
         
         {/* Distant nebula/galaxy effect */}
@@ -189,6 +231,15 @@ export default function About() {
           </div>
         </div>
 
+        {/* Main Headline with Soft Blue Glow */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-wide" style={{
+            textShadow: '0 0 15px rgba(135, 206, 235, 0.6), 0 0 30px rgba(135, 206, 235, 0.4), 0 0 45px rgba(135, 206, 235, 0.2)'
+          }}>
+            Charting New Frontiers
+          </h2>
+        </div>
+        
         {/* About Me Section */}
         <div className="mb-16">
           <div className="flex items-center justify-center mb-8">
