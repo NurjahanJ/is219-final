@@ -12,20 +12,20 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Dashboard UI",
-    description: "A responsive dashboard built using Next.js and Tailwind CSS, with charts and data layout.",
+    description: "An interactive analytics dashboard that visualizes complex data through intuitive charts and responsive layouts. Built with Next.js and Tailwind CSS, this project features dynamic data filtering, dark/light mode, and real-time updates that adapt seamlessly across all devices.",
     tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
     github: "https://github.com/NurjahanJ/dasboard",
     demo: "https://dasboard-wheat.vercel.app/"
   },
   {
     title: "Flutter Calculator",
-    description: "A simple but well-designed calculator app built using Flutter.",
+    description: "A cross-platform calculator application with an elegant, intuitive interface built using Flutter. Features include a customizable theme system, advanced scientific functions, calculation history, and haptic feedback. Designed with accessibility in mind while maintaining visual appeal across iOS and Android devices.",
     tags: ["Flutter", "Dart", "Mobile UI"],
     github: "https://github.com/NurjahanJ/flutter_calculator"
   },
   {
     title: "Story AI",
-    description: "An interactive storytelling application that uses AI to generate personalized stories based on user input.",
+    description: "An innovative AI-powered storytelling platform that crafts unique narratives based on user prompts and preferences. Leveraging advanced NLP techniques, this Python application creates immersive, personalized stories with branching narratives that adapt to reader choices. Features include theme customization, character development, and exportable story formats for sharing adventures.",
     tags: ["AI", "Python", "NLP", "Interactive"],
     github: "https://github.com/NurjahanJ/story_ai"
   }
