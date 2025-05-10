@@ -1,6 +1,6 @@
 # My Digital Map - Explorer Portfolio
 
-A modern, responsive portfolio website built with the Explorer brand archetype, featuring a starry night background with soft blue accents. This portfolio showcases projects, skills, and professional journey in an immersive, navigation-themed format that invites visitors to explore my digital landscape.
+A modern, responsive portfolio website built with the Explorer brand archetype, featuring an immersive starry night sky background with dynamic animations and navigation-themed elements. This digital expedition showcases my journey, projects, and skills through an adventure-focused lens, inviting visitors to chart their own course through my professional landscape.
 
 ## 🌐 Live Demo
 
@@ -8,17 +8,26 @@ Explore the live site: [https://portfolio-git-main-nurjahan-jhornas-projects.ver
 
 ## 🧭 Brand Archetype: Explorer
 
-This portfolio embodies the Explorer archetype with:
+This portfolio fully embodies the Explorer brand archetype through:
 
-- **Immersive, night sky color palette:**
-  - Deep Navy (#0a1128) - Primary background color representing the night sky
-  - Soft Glowing Blue (#3b82f6) - Primary accent color evoking discovery and guidance
-  - Zinc Gray (#18181b) - Secondary background for cards and containers
-  - Slate Gray (#94a3b8) - Text color providing readability against dark backgrounds
+- **Adventure-Driven Color Palette:**
+  - Deep Navy (#0a1128) - Primary background representing the vast night sky and unknown territories
+  - Forest Green (#2f4f4f) - Primary color symbolizing wilderness and exploration
+  - Sandstone (#c2b280) - Accent color evoking natural landscapes and terrain
+  - Sky Blue (#87ceeb) - Secondary color representing discovery and open horizons
+  - Navy (#001f3f) - Deep accent color for contrast and depth
 
-- **Navigation-themed elements** including a realistic compass favicon and map-inspired components
-- **Immersive starry backgrounds** that create a sense of exploration and wonder
-- **Glass-like UI components** with subtle blue glows that guide the user through the experience
+- **Journey-Focused Design Elements:**
+  - Dynamic starry background with shooting stars animation
+  - Compass and map iconography throughout the interface
+  - Journey cards highlighting the path of discovery
+  - Expedition-themed section headers and navigation
+
+- **Exploration Visual Language:**
+  - Glass-morphism UI components suggesting transparency and discovery
+  - Subtle blue glows mimicking celestial navigation
+  - Card designs with border accents resembling trail markers
+  - Animated elements that invite interaction and exploration
 
 ## 🛠️ Tech Stack
 
@@ -56,15 +65,16 @@ This portfolio embodies the Explorer archetype with:
 
 ## ✨ Features
 
-- **Responsive Design** - Looks great on all devices from mobile to desktop
-- **Explorer Theme** - Immersive starry backgrounds with soft blue accents
-- **About Page** - Personal introduction with profile photo and skills sections
-- **Projects Section** - Showcase of work with animated project cards
-- **Contact Page** - Form and social links with Explorer-themed styling
-- **Global Footer** - Consistent navigation and contact options on all pages
-- **Custom Compass Favicon** - Realistic navigation-themed site icon
-- **Glass Morphism Effects** - Modern UI with backdrop blur and transparency
-- **Accessible UI** - Keyboard navigation and screen reader support
+- **Responsive Expedition** - Adapts seamlessly across all devices from mobile to desktop
+- **Explorer Theme** - Immersive starry backgrounds with animated celestial elements
+- **About Journey** - Personal narrative framed as an expedition with journey milestones
+- **Project Discoveries** - Showcase of work presented as discoveries with interactive cards
+- **Navigation Elements** - Compass-inspired UI components and directional cues
+- **Animated Backgrounds** - Dynamic star field with twinkling stars and shooting stars
+- **Expedition Cards** - Content presented in journey-themed card components
+- **Glass Morphism Effects** - Modern UI with backdrop blur suggesting transparency of discovery
+- **Adventure-Focused Typography** - Font choices that evoke exploration and discovery
+- **Accessible Pathways** - Keyboard navigation and screen reader support for all explorers
 
 ## 🚀 Getting Started
 
