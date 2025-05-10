@@ -287,12 +287,7 @@ export default function Home() {
       {/* Fullscreen Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center px-4 z-10">
         <div className="max-w-5xl mx-auto text-center space-y-12">
-          {/* Explorer Badge */}
-          <div className={`transition-all duration-700 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="inline-block px-4 py-1 bg-indigo-900/40 border border-indigo-500/30 text-indigo-300 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
-              Digital Explorer
-            </span>
-          </div>
+          {/* Explorer Badge removed */}
           
           {/* Main Headline */}
           <div className={`max-w-3xl mx-auto text-center transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -303,7 +298,7 @@ export default function Home() {
               UX Designer & Frontend Developer
             </p>
             <p className="text-lg text-slate-300 mb-10 font-light leading-relaxed max-w-2xl mx-auto">
-              Exploring the digital wilderness through innovative web development and design. Join me on a journey of discovery and creation.
+              Crafting intuitive digital experiences through thoughtful design and clean code. Transforming ideas into engaging, accessible web solutions that make an impact.
             </p>
             
             {/* Glowing Button */}
