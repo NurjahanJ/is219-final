@@ -297,8 +297,7 @@ export default function Home() {
           {/* Main Headline */}
           <div className={`max-w-3xl mx-auto text-center transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 font-sans leading-tight tracking-tight">
-              Charting New Frontiers <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">in Technology</span>
+              Nurjahan Jhorna
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 mb-8">
               UX Designer & Frontend Developer
