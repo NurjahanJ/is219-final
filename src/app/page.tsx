@@ -291,10 +291,23 @@ export default function Home() {
           
           {/* Main Headline */}
           <div className={`max-w-3xl mx-auto text-center transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 font-sans leading-tight tracking-tight">
+            <h1 
+              className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 font-sans leading-tight tracking-tight"
+              style={{
+                background: 'linear-gradient(to right, #fff, #7dd3fc, #fff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 20px rgba(34, 211, 238, 0.3)'
+              }}
+            >
               Nurjahan Jhorna
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 mb-8">
+            <p 
+              className="text-xl md:text-2xl text-cyan-300 mb-8"
+              style={{
+                textShadow: '0 0 10px rgba(34, 211, 238, 0.3)'
+              }}
+            >
               UX Designer & Frontend Developer
             </p>
             <p className="text-lg text-slate-300 mb-10 font-light leading-relaxed max-w-2xl mx-auto">
@@ -331,11 +344,34 @@ export default function Home() {
 
       <main className="container mx-auto space-y-16 px-4 py-16 relative z-10">
         {/* My Journey Section */}
-        <section id="journey" className="py-12 md:py-20">
+        <section id="journey" className="py-12 md:py-20 relative overflow-hidden">
+          {/* Subtle stars in journey section */}
+          <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
+            {Array.from({ length: 25 }).map((_, i) => (
+              <div 
+                key={`star-journey-${i}`}
+                className="absolute rounded-full bg-white"
+                style={{
+                  width: `${Math.random() * 2 + 1}px`,
+                  height: `${Math.random() * 2 + 1}px`,
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  opacity: Math.random() * 0.7 + 0.3
+                }}
+              />
+            ))}
+          </div>
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-center mb-4">
               <div className="h-px w-12 bg-cyan-500/70 mr-4"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white font-sans">The Expedition</h2>
+              <h2 
+                className="text-3xl md:text-4xl font-bold text-cyan-300 font-sans"
+                style={{
+                  textShadow: '0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3)'
+                }}
+              >
+                The Expedition
+              </h2>
               <div className="h-px w-12 bg-cyan-500/70 ml-4"></div>
             </div>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto text-center font-light mb-12">
@@ -353,45 +389,69 @@ export default function Home() {
                 <h3 className="text-xl font-medium text-cyan-300 font-sans">Navigation</h3>
               </div>
               <p className="text-slate-300 leading-relaxed font-light">
-                Charting a course through Web & Information Systems, where I'm building a strong foundation in both the technical and design aspects of web development. My expedition includes UX design principles, web programming, and information architecture.  
+                Navigating the complex terrain of Web & Information Systems with strategic precision. My methodical approach integrates UX research, information architecture, and accessibility standards to create intuitive digital pathways that guide users through seamless experiences with clarity and purpose.
               </p>
             </article>
             
             {/* Development Card */}
-            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-blue-600 hover:shadow-blue-900/20 hover:translate-y-[-2px] transition-all duration-300">
+            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-cyan-600 hover:shadow-cyan-900/20 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-900/50 rounded-full text-blue-400">
+                <div className="p-3 bg-cyan-900/50 rounded-full text-cyan-400">
                   <Code className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-blue-300 font-sans">Development</h3>
+                <h3 className="text-xl font-medium text-cyan-300 font-sans">Development</h3>
               </div>
               <p className="text-slate-300 leading-relaxed font-light">
-                Venturing into new coding territories through hands-on projects and self-directed learning. I'm proficient in HTML, CSS, JavaScript, and React, and I'm always exploring new technologies to add to my toolkit. I thrive on the challenge of solving complex problems and building responsive digital landscapes.
+                Engineering robust frontend solutions with modern web technologies including React, TypeScript, and Next.js. My development approach emphasizes clean architecture, performance optimization, and responsive design principles to create scalable applications that deliver exceptional user experiences across all devices.
               </p>
             </article>
             
             {/* Design Card */}
-            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-indigo-600 hover:shadow-indigo-900/20 hover:translate-y-[-2px] transition-all duration-300">
+            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-cyan-600 hover:shadow-cyan-900/20 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-indigo-900/50 rounded-full text-indigo-400">
+                <div className="p-3 bg-cyan-900/50 rounded-full text-cyan-400">
                   <Palette className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-indigo-300 font-sans">Design</h3>
+                <h3 className="text-xl font-medium text-cyan-300 font-sans">Design</h3>
               </div>
               <p className="text-slate-300 leading-relaxed font-light">
-                Mapping the uncharted territories of UX/UI design through coursework and creative exploration. I'm passionate about crafting user-centered designs that combine aesthetics with functionality, using tools like Figma to bring my visionary ideas to life.
+                Crafting visually compelling interfaces that balance form and function through systematic design thinking. My process incorporates user research, prototyping, and iterative testing to create cohesive design systems that communicate clearly, evoke appropriate emotions, and guide users intuitively through digital experiences.
               </p>
             </article>
           </div>
         </section>
         
         {/* Projects Section */}
-        <section id="projects" className="py-16 md:py-24 bg-slate-900/80 backdrop-blur-sm border-y border-slate-800">
-          <div className="container mx-auto px-4">
+        <section id="projects" className="py-16 md:py-24 bg-slate-900/80 backdrop-blur-sm border-y border-slate-800 relative overflow-hidden">
+          {/* Subtle stars in projects section */}
+          <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <div 
+                key={`star-projects-${i}`}
+                className="absolute rounded-full bg-white"
+                style={{
+                  width: `${Math.random() * 2 + 1}px`,
+                  height: `${Math.random() * 2 + 1}px`,
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  opacity: Math.random() * 0.7 + 0.3
+                }}
+              />
+            ))}
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-blue-500/70 mr-4"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">My Playground</h2>
-              <div className="h-px w-12 bg-blue-500/70 ml-4"></div>
+              <div className="h-px w-12 bg-cyan-500/70 mr-4"></div>
+              <h2 
+                className="text-3xl md:text-4xl font-bold text-center mb-12 text-cyan-300" 
+                style={{
+                  textShadow: '0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3)'
+                }}
+              >
+                My Playground
+              </h2>
+              <div className="h-px w-12 bg-cyan-500/70 ml-4"></div>
             </div>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto font-light mb-12">
               Artifacts from my digital expeditions — projects that showcase my approach to exploration, problem-solving, and innovation in the technological wilderness.
