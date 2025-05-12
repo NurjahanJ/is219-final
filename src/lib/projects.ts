@@ -24,7 +24,7 @@ export const projects: Project[] = [
     github: "https://github.com/NurjahanJ/flutter_calculator"
   },
   {
-    title: "Story AI",
+    title: "AI Story Generator",
     description: "An innovative AI-powered storytelling platform that crafts unique narratives based on user prompts and preferences. Leveraging advanced NLP techniques, this Python application creates immersive, personalized stories with branching narratives that adapt to reader choices. Features include theme customization, character development, and exportable story formats for sharing adventures.",
     tags: ["AI", "Python", "NLP", "Interactive"],
     github: "https://github.com/NurjahanJ/story_ai"
