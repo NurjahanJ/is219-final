@@ -292,25 +292,20 @@ export default function Home() {
           {/* Main Headline */}
           <div className={`max-w-3xl mx-auto text-center transition-all duration-700 delay-100 transform ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 
-              className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 font-sans leading-tight tracking-tight"
-              style={{
-                background: 'linear-gradient(to right, #fff, #7dd3fc, #fff)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 20px rgba(34, 211, 238, 0.3)'
-              }}
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent ${headlineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-1000 ease-out`} 
+              style={{ textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)' }}
             >
               Nurjahan Jhorna
             </h1>
             <p 
-              className="text-xl md:text-2xl text-cyan-300 mb-8"
+              className="text-xl md:text-2xl text-blue-300 mb-8"
               style={{
                 textShadow: '0 0 10px rgba(34, 211, 238, 0.3)'
               }}
             >
               UX Designer & Frontend Developer
             </p>
-            <p className="text-lg text-slate-300 mb-10 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto font-light mb-10">
               Crafting intuitive digital experiences through thoughtful design and clean code. Transforming ideas into engaging, accessible web solutions that make an impact.
             </p>
             
@@ -320,13 +315,13 @@ export default function Home() {
                 <Link href="/about" className="relative z-10 text-white font-medium text-lg">
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur-md group-hover:blur-lg transition-all duration-500 animate-pulse"></span>
-                  <span className="relative z-20 flex items-center justify-center gap-2">
+                  <span className="relative z-20 flex items-center justify-center gap-2 text-white">
                     Explore Now
                   </span>
                 </Link>
               </Button>
               
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-slate-500 text-slate-300 hover:text-white hover:bg-slate-800/50 hover:border-slate-400">
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-cyan-700/20 text-cyan-400 hover:text-cyan-300 hover:bg-slate-700 hover:border-cyan-700/40">
                 <Link href="/contact">Contact</Link>
               </Button>
             </div>
@@ -363,9 +358,9 @@ export default function Home() {
           </div>
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-cyan-500/70 mr-4"></div>
+              <div className="h-px w-12 bg-blue-500/50 mr-4"></div>
               <h2 
-                className="text-3xl md:text-4xl font-bold text-cyan-300 font-sans"
+                className="text-3xl md:text-4xl font-bold text-blue-300 font-sans"
                 style={{
                   textShadow: '0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3)'
                 }}
@@ -374,47 +369,47 @@ export default function Home() {
               </h2>
               <div className="h-px w-12 bg-cyan-500/70 ml-4"></div>
             </div>
-            <p className="text-lg text-slate-300 max-w-3xl mx-auto text-center font-light mb-12">
+            <p className="text-lg text-blue-300 max-w-3xl mx-auto text-center font-light mb-12">
               Navigating the digital wilderness through continuous exploration, discovery, and creation of innovative web experiences.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {/* Education Card */}
-            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-cyan-600 hover:shadow-cyan-900/20 hover:translate-y-[-2px] transition-all duration-300">
+            <article className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-6 border border-blue-500/20 hover:shadow-blue-500/5 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-cyan-900/50 rounded-full text-cyan-400">
+                <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
                   <Compass className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-cyan-300 font-sans">Navigation</h3>
+                <h3 className="text-xl font-medium text-blue-300 font-sans">Navigation</h3>
               </div>
-              <p className="text-slate-300 leading-relaxed font-light">
+              <p className="text-slate-200 leading-relaxed font-light">
                 Navigating the complex terrain of Web & Information Systems with strategic precision. My methodical approach integrates UX research, information architecture, and accessibility standards to create intuitive digital pathways that guide users through seamless experiences with clarity and purpose.
               </p>
             </article>
             
             {/* Development Card */}
-            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-cyan-600 hover:shadow-cyan-900/20 hover:translate-y-[-2px] transition-all duration-300">
+            <article className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-6 border border-blue-500/20 hover:shadow-blue-500/5 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-cyan-900/50 rounded-full text-cyan-400">
+                <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
                   <Code className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-cyan-300 font-sans">Development</h3>
+                <h3 className="text-xl font-medium text-blue-300 font-sans">Development</h3>
               </div>
-              <p className="text-slate-300 leading-relaxed font-light">
+              <p className="text-slate-200 leading-relaxed font-light">
                 Engineering robust frontend solutions with modern web technologies including React, TypeScript, and Next.js. My development approach emphasizes clean architecture, performance optimization, and responsive design principles to create scalable applications that deliver exceptional user experiences across all devices.
               </p>
             </article>
             
             {/* Design Card */}
-            <article className="bg-slate-900/60 backdrop-blur-sm rounded-xl shadow-md p-6 border-l-4 border-l-cyan-600 hover:shadow-cyan-900/20 hover:translate-y-[-2px] transition-all duration-300">
+            <article className="bg-[rgba(10,17,40,0.7)] backdrop-blur-sm rounded-xl shadow-md p-6 border border-blue-500/20 hover:shadow-blue-500/5 hover:translate-y-[-2px] transition-all duration-300">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-cyan-900/50 rounded-full text-cyan-400">
+                <div className="p-3 bg-blue-600/20 rounded-full text-blue-400">
                   <Palette className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-medium text-cyan-300 font-sans">Design</h3>
+                <h3 className="text-xl font-medium text-blue-300 font-sans">Design</h3>
               </div>
-              <p className="text-slate-300 leading-relaxed font-light">
+              <p className="text-slate-200 leading-relaxed font-light">
                 Crafting visually compelling interfaces that balance form and function through systematic design thinking. My process incorporates user research, prototyping, and iterative testing to create cohesive design systems that communicate clearly, evoke appropriate emotions, and guide users intuitively through digital experiences.
               </p>
             </article>
@@ -422,7 +417,7 @@ export default function Home() {
         </section>
         
         {/* Projects Section */}
-        <section id="projects" className="py-16 md:py-24 bg-slate-900/80 backdrop-blur-sm border-y border-slate-800 relative overflow-hidden">
+        <section id="projects" className="py-16 md:py-24 bg-[rgba(10,17,40,0.7)] backdrop-blur-sm border-y border-blue-500/20 relative overflow-hidden">
           {/* Subtle stars in projects section */}
           <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
             {Array.from({ length: 30 }).map((_, i) => (
@@ -442,18 +437,16 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex items-center justify-center mb-4">
-              <div className="h-px w-12 bg-cyan-500/70 mr-4"></div>
+              <div className="h-px w-12 bg-blue-500/50 mr-4"></div>
               <h2 
-                className="text-3xl md:text-4xl font-bold text-center mb-12 text-cyan-300" 
-                style={{
-                  textShadow: '0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3)'
-                }}
+                className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent" 
+                style={{textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)'}} 
               >
                 My Playground
               </h2>
               <div className="h-px w-12 bg-cyan-500/70 ml-4"></div>
             </div>
-            <p className="text-lg text-slate-300 max-w-3xl mx-auto font-light mb-12">
+            <p className="text-lg text-blue-300 max-w-3xl mx-auto font-light mb-12">
               Artifacts from my digital expeditions — projects that showcase my approach to exploration, problem-solving, and innovation in the technological wilderness.
             </p>
           </div>

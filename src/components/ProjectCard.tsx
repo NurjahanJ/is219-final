@@ -33,7 +33,7 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
   };
 
   return (
-    <Card className="flex flex-col h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border-l-4 border-l-cyan-500 group bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 shadow-lg">
+    <Card className="flex flex-col h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] border group bg-[rgba(10,17,40,0.8)] backdrop-blur-sm border-sky-500/30 hover:border-sky-400/50 shadow-lg">
       <CardHeader className="pb-3 relative">
         {/* Subtle star background for cards */}
         <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
@@ -53,10 +53,10 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
         </div>
         
         <div className="flex items-start justify-between relative z-10">
-          <CardTitle className="text-xl md:text-2xl text-cyan-300 group-hover:text-cyan-200 transition-colors font-sans">
+          <CardTitle className="text-xl md:text-2xl text-sky-300 group-hover:text-sky-200 transition-colors font-sans">
             {title}
           </CardTitle>
-          <div className="p-2 rounded-full bg-cyan-900/40 text-cyan-400 group-hover:bg-cyan-800/60 transition-colors">
+          <div className="p-2 rounded-full bg-sky-900/40 text-sky-400 group-hover:bg-sky-800/60 transition-colors">
             <Folder className="h-5 w-5" aria-hidden="true" />
           </div>
         </div>
@@ -64,7 +64,7 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
           {tags.map((tag) => (
             <span 
               key={tag} 
-              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-cyan-300 border border-cyan-800/50 transition-transform duration-300 hover:scale-105 hover:bg-slate-700"
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[rgba(10,17,40,0.9)] text-sky-300 border border-sky-500/30 transition-transform duration-300 hover:scale-105 hover:bg-sky-900/30"
               role="listitem"
             >
               {tag}
@@ -77,13 +77,13 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
           {description}
         </CardDescription>
       </CardContent>
-      <CardFooter className="flex flex-wrap gap-3 pt-4 border-t border-slate-700/50">
+      <CardFooter className="flex flex-wrap gap-3 pt-4 border-t border-sky-500/20">
         {demo && (
           <Button 
             asChild 
             variant="default" 
             size="sm" 
-            className="bg-cyan-700 hover:bg-cyan-600 text-white focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+            className="bg-sky-600 hover:bg-sky-500 text-white focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
           >
             <Link 
               href={demo} 
@@ -102,7 +102,7 @@ export function ProjectCard({ title, description, tags, github, demo }: ProjectC
             asChild 
             variant="outline" 
             size="sm" 
-            className="border-cyan-700 text-cyan-300 hover:bg-slate-800 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
+            className="border-sky-500/50 text-sky-300 hover:bg-sky-900/30 focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-md"
           >
             <Link 
               href={github} 
