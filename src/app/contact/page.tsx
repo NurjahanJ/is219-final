@@ -64,8 +64,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-900 px-4 py-12 md:py-20 pt-16 md:pt-24 relative overflow-hidden">
-      {/* Starry background */}
+    <div className="min-h-screen relative overflow-hidden bg-[#0a1128] text-slate-100">
+      {/* Deep blue gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#1c2e4a] to-[#0a1128]"></div>
+      
+      {/* Stars effect */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(100)].map((_, i) => (
           <div 
@@ -84,28 +87,35 @@ export default function Contact() {
         ))}
       </div>
       
-      {/* Larger glowing stars */}
-      <div className="absolute top-1/4 right-1/4 bg-cyan-400 w-2 h-2 rounded-full opacity-70 blur-sm" aria-hidden="true"></div>
-      <div className="absolute bottom-1/3 left-1/3 bg-cyan-300 w-3 h-3 rounded-full opacity-50 blur-sm" aria-hidden="true"></div>
+      {/* Nebula effects */}
+      <div 
+        className="absolute rounded-full opacity-10 blur-2xl"
+        style={{
+          width: '300px',
+          height: '300px',
+          top: '30%',
+          right: '15%',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(37, 99, 235, 0.3) 50%, rgba(29, 78, 216, 0) 100%)',
+        }}
+      ></div>
       
-      <main className="container mx-auto max-w-5xl relative z-10">
+      <main className="container mx-auto max-w-5xl relative z-10 px-4 py-16 md:py-24">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-cyan-900/30 backdrop-blur-sm rounded-full mb-4 border border-cyan-500/20 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
-            <Compass className="h-6 w-6 text-cyan-400" aria-hidden="true" />
+          <div className="inline-flex items-center justify-center p-3 bg-blue-900/30 backdrop-blur-sm rounded-full mb-4 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+            <MessageSquare className="h-6 w-6 text-blue-400" aria-hidden="true" />
           </div>
-          <div className="flex items-center justify-center mb-4">
-            <div className="h-px w-12 bg-cyan-500/50 mr-4"></div>
-            <h1 
-              className="text-cyan-300 text-4xl md:text-5xl font-bold mb-2 tracking-wide"
-              style={{
-                textShadow: '0 0 10px rgba(34, 211, 238, 0.5), 0 0 20px rgba(34, 211, 238, 0.3)'
-              }}
-            >
-              Contact Me
-            </h1>
-            <div className="h-px w-12 bg-cyan-500/50 ml-4"></div>
-          </div>
+          <h1 
+            className="text-4xl md:text-5xl font-bold mb-6 tracking-tight bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent"
+            style={{
+              textShadow: '0 0 20px rgba(147, 197, 253, 0.3), 0 0 40px rgba(147, 197, 253, 0.1)'
+            }}
+          >
+            Let's Connect
+          </h1>
+          <p className="text-xl text-blue-300 font-light max-w-2xl mx-auto">
+            Have a question or want to collaborate? I'd love to hear from you.
+          </p>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
             I'm available for collaboration on innovative web development and design projects. 
             Let's discuss how my expertise in frontend development and UX design can help transform your digital vision into an exceptional user experience.
@@ -116,121 +126,68 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Methods Column */}
           <div className="order-2 lg:order-1">
-            <Card className="border-l-4 border-l-cyan-500 hover:shadow-lg transition-shadow duration-300 h-full bg-slate-900/80 backdrop-blur-sm border border-cyan-700/20 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
-              {/* Subtle stars in card */}
-              <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div 
-                    key={`star-contact-${i}`}
-                    className="absolute rounded-full bg-white"
-                    style={{
-                      width: `${Math.random() * 2 + 1}px`,
-                      height: `${Math.random() * 2 + 1}px`,
-                      top: `${Math.random() * 100}%`,
-                      left: `${Math.random() * 100}%`,
-                      opacity: Math.random() * 0.7 + 0.3
-                    }}
-                  />
-                ))}
-              </div>
+            <Card className="bg-[rgba(10,17,40,0.7)] border-blue-500/20 backdrop-blur-sm shadow-lg hover:shadow-blue-500/5 transition-all duration-500">
               <CardHeader>
-                <CardTitle className="text-cyan-300 text-2xl font-bold">Connect With Me</CardTitle>
-                <CardDescription className="text-slate-400 font-light">
-                  Reach out through any of these channels to discuss your project requirements.
-                </CardDescription>
+                <CardTitle className="text-blue-300 text-2xl">Connect With Me</CardTitle>
+                <CardDescription className="text-slate-300">Choose your preferred method of contact</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Email Button */}
-                <a 
-                  href="mailto:nurjahan.jhorna@example.com" 
-                  className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
-                  aria-label="Send me an email"
-                >
-                  <div className="p-3 bg-slate-800 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 border border-cyan-700/20 group-hover:border-cyan-700/40">
-                    <Mail className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-cyan-300">Email</h3>
-                    <p className="text-sm text-slate-400">Send me a message</p>
-                  </div>
-                </a>
-
-                {/* LinkedIn Button */}
-                <a 
-                  href="https://www.linkedin.com/in/nurjahan-jhorna" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg bg-zinc-800/40 hover:bg-zinc-700/60 transition-colors duration-300 group border border-cyan-500/10 hover:border-cyan-500/30"
-                  aria-label="Visit my LinkedIn profile"
-                >
-                  <div className="p-3 bg-slate-800 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 border border-cyan-700/20 group-hover:border-cyan-700/40">
-                    <Linkedin className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-cyan-300">LinkedIn</h3>
-                    <p className="text-sm text-slate-400">Connect professionally</p>
-                  </div>
-                </a>
-
-                {/* GitHub Button */}
-                <a 
-                  href="https://github.com/NurjahanJ" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors duration-300 group"
-                  aria-label="Visit my GitHub profile"
-                >
-                  <div className="p-3 bg-slate-800 rounded-full mr-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 border border-cyan-700/20 group-hover:border-cyan-700/40">
-                    <Github className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-cyan-300">GitHub</h3>
-                    <p className="text-sm text-slate-400">View my code repositories</p>
-                  </div>
-                </a>
-
-                {/* Nature-inspired decorative elements */}
-                <div className="relative h-40 mt-8 overflow-hidden rounded-lg bg-zinc-800/40 flex items-center justify-center border border-cyan-500/20 backdrop-blur-sm">
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500 rounded-full opacity-10 blur-xl"></div>
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-cyan-400 rounded-full opacity-10 blur-xl"></div>
-                  <Map className="absolute opacity-10 w-20 h-20 text-cyan-400" />
-                  <p className="text-cyan-300 font-medium text-center relative z-10 px-6">
-                    Looking forward to charting new digital territories and navigating exciting opportunities together.
-                  </p>
+              <CardContent>
+                <div className="space-y-6">
+                  <Link 
+                    href="mailto:njahan@stevens.edu" 
+                    className="flex items-center gap-3 p-3 bg-[rgba(10,17,40,0.5)] rounded-lg hover:bg-[rgba(10,17,40,0.6)] transition-all duration-300 group border border-blue-500/10 hover:border-blue-500/20"
+                  >
+                    <div className="p-2 bg-blue-600/20 rounded-full group-hover:bg-blue-600/30 transition-colors duration-300">
+                      <Mail className="h-5 w-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-blue-300">Email</div>
+                    </div>
+                  </Link>
+                  
+                  <Link 
+                    href="https://github.com/NurjahanJ" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 bg-[rgba(10,17,40,0.5)] rounded-lg hover:bg-[rgba(10,17,40,0.6)] transition-all duration-300 group border border-blue-500/10 hover:border-blue-500/20"
+                  >
+                    <div className="p-2 bg-blue-600/20 rounded-full group-hover:bg-blue-600/30 transition-colors duration-300">
+                      <Github className="h-5 w-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-blue-300">GitHub</div>
+                    </div>
+                  </Link>
+                  
+                  <Link 
+                    href="https://linkedin.com/in/nurjahan-jahan" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 bg-[rgba(10,17,40,0.5)] rounded-lg hover:bg-[rgba(10,17,40,0.6)] transition-all duration-300 group border border-blue-500/10 hover:border-blue-500/20"
+                  >
+                    <div className="p-2 bg-blue-600/20 rounded-full group-hover:bg-blue-600/30 transition-colors duration-300">
+                      <Linkedin className="h-5 w-5 text-blue-400" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-blue-300">LinkedIn</div>
+                    </div>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Contact Form Column */}
-          <div className="order-1 lg:order-2">
-            <Card className="border-l-4 border-l-cyan-500 hover:shadow-lg transition-shadow duration-300 h-full bg-slate-900/80 backdrop-blur-sm border border-cyan-700/20 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
-              {/* Subtle stars in card */}
-              <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div 
-                    key={`star-contact-${i}`}
-                    className="absolute rounded-full bg-white"
-                    style={{
-                      width: `${Math.random() * 2 + 1}px`,
-                      height: `${Math.random() * 2 + 1}px`,
-                      top: `${Math.random() * 100}%`,
-                      left: `${Math.random() * 100}%`,
-                      opacity: Math.random() * 0.7 + 0.3
-                    }}
-                  />
-                ))}
-              </div>
+          {/* Contact Form Card */}
+          <div className="relative">
+            <Card className="bg-[rgba(10,17,40,0.7)] border-blue-500/20 backdrop-blur-sm shadow-lg hover:shadow-blue-500/5 transition-all duration-500">
               <CardHeader>
-                <CardTitle className="text-cyan-300 text-2xl font-bold">Send a Message</CardTitle>
-                <CardDescription className="text-slate-400 font-light">
-                  Have a question or idea you'd like to discuss? I'd love to hear from you.
-                </CardDescription>
+                <CardTitle className="text-blue-300 text-2xl">Send a Message</CardTitle>
+                <CardDescription className="text-slate-300">I'll get back to you as soon as possible</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-cyan-300 font-light">Name</Label>
+                    <Label htmlFor="name" className="text-blue-300">Name</Label>
                     <Input
                       id="name"
                       name="name"
@@ -239,13 +196,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="bg-zinc-700/60 border-cyan-500/30 focus:border-cyan-400/50 focus:ring-cyan-400/20 text-slate-300"
+                      className="bg-[rgba(10,17,40,0.5)] border-blue-500/20 focus:border-blue-400/50 focus:ring-blue-400/20 text-slate-300 placeholder-slate-500"
                       aria-label="Your name"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-cyan-300 font-light">Email</Label>
+                    <Label htmlFor="email" className="text-blue-300">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -254,13 +211,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="bg-zinc-700/60 border-cyan-500/30 focus:border-cyan-400/50 focus:ring-cyan-400/20 text-slate-300"
+                      className="bg-[rgba(10,17,40,0.5)] border-blue-500/20 focus:border-blue-400/50 focus:ring-blue-400/20 text-slate-300 placeholder-slate-500"
                       aria-label="Your email address"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-cyan-300 font-light">Message</Label>
+                    <Label htmlFor="message" className="text-blue-300">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -268,14 +225,14 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="min-h-[150px] bg-zinc-700/60 border-cyan-500/30 focus:border-cyan-400/50 focus:ring-cyan-400/20 text-slate-300"
+                      className="min-h-[150px] bg-[rgba(10,17,40,0.5)] border-blue-500/20 focus:border-blue-400/50 focus:ring-blue-400/20 text-slate-300 placeholder-slate-500"
                       aria-label="Your message"
                     />
                   </div>
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-cyan-700 hover:bg-cyan-600 text-white py-3 rounded-md transition-colors duration-300 flex items-center justify-center gap-2"
+                    className="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                     disabled={isSubmitting}
                     aria-label="Send message"
                   >
@@ -297,14 +254,14 @@ export default function Contact() {
                   
                   {/* Success Message */}
                   {submitSuccess && (
-                    <div className="p-3 bg-cyan-900/30 border border-cyan-500/30 text-cyan-300 rounded-md font-light backdrop-blur-sm">
+                    <div className="p-4 bg-blue-900/30 border border-blue-500/30 text-blue-300 rounded-lg font-light backdrop-blur-sm">
                       Thank you for your message. I appreciate you taking the time to share your thoughts and will respond thoughtfully soon.
                     </div>
                   )}
                   
                   {/* Error Message */}
                   {submitError && (
-                    <div className="p-3 bg-red-900/30 border border-red-500/30 text-red-300 rounded-md font-light backdrop-blur-sm">
+                    <div className="p-4 bg-red-900/30 border border-red-500/30 text-red-300 rounded-lg font-light backdrop-blur-sm">
                       {submitError}
                     </div>
                   )}
@@ -312,6 +269,17 @@ export default function Contact() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Navigation Button */}
+        <div className="mt-12 flex justify-start">
+          <Link 
+            href="/"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[rgba(10,17,40,0.5)] text-blue-300 rounded-lg border border-blue-500/20 hover:bg-[rgba(10,17,40,0.7)] transition-all duration-300 hover:border-blue-500/30 hover:text-blue-200"
+          >
+            <Compass className="w-5 h-5" />
+            Back to Base Camp
+          </Link>
         </div>
       </main>
     </div>
