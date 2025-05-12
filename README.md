@@ -1,43 +1,100 @@
-# My Digital Map - Explorer Portfolio
+# Explorer Portfolio - IS219 Final Project
 
-A modern, responsive portfolio website built with the Explorer brand archetype, featuring an immersive starry night sky background with dynamic animations and navigation-themed elements. This digital expedition showcases my journey, projects, and skills through an adventure-focused lens, inviting visitors to chart their own course through my professional landscape.
+A modern, responsive portfolio website built with Next.js, showcasing technical skills and projects while implementing archetypal branding and Cialdini's principles of persuasion.
 
-## 🌐 Live Demo
+## 🌟 Featured Projects
 
-Explore the live site: [https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/](https://portfolio-git-main-nurjahan-jhornas-projects.vercel.app/)
+### Data Visualization Dashboard
+- Interactive analytics dashboard with intuitive charts
+- Built with Next.js and Tailwind CSS
+- Features: Dynamic data filtering, dark/light mode, real-time updates
+- Tech Stack: Next.js, Tailwind CSS, Chart.js, Vercel
 
-## 🧭 Brand Archetype: Explorer
+### AI Story Generator
+- AI-powered storytelling platform with personalized narratives
+- Advanced NLP techniques for story generation
+- Features: Theme customization, character development, exportable stories
+- Tech Stack: AI, Python, NLP, Interactive
 
-This portfolio fully embodies the Explorer brand archetype through:
+### Flutter Calculator
+- Cross-platform calculator with elegant UI
+- Features: Theme system, scientific functions, calculation history
+- Designed for iOS and Android
+- Tech Stack: Flutter, Dart, Mobile UI
 
-- **Adventure-Driven Color Palette:**
-  - Deep Navy (#0a1128) - Primary background representing the vast night sky and unknown territories
-  - Forest Green (#2f4f4f) - Primary color symbolizing wilderness and exploration
-  - Sandstone (#c2b280) - Accent color evoking natural landscapes and terrain
-  - Sky Blue (#87ceeb) - Secondary color representing discovery and open horizons
-  - Navy (#001f3f) - Deep accent color for contrast and depth
+## 🚀 Technologies
 
-- **Journey-Focused Design Elements:**
-  - Dynamic starry background with shooting stars animation
-  - Compass and map iconography throughout the interface
-  - Journey cards highlighting the path of discovery
-  - Expedition-themed section headers and navigation
+- **Framework**: Next.js
+- **Styling**: Tailwind CSS
+- **UI Components**: Modern card-based design
+- **Deployment**: Vercel
 
-- **Exploration Visual Language:**
-  - Glass-morphism UI components suggesting transparency and discovery
-  - Subtle blue glows mimicking celestial navigation
-  - Card designs with border accents resembling trail markers
-  - Animated elements that invite interaction and exploration
+## 🎨 Design Implementation
 
-## 🛠️ Tech Stack
+- **Archetype**: Hero/Outlaw branding
+- **Responsive Design**: Mobile-first approach
+- **Consistent Styling**: Unified design system
 
-- **[Next.js 14](https://nextjs.org/)** - React framework with App Router
-- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[shadcn/ui](https://ui.shadcn.com/)** - Accessible UI components
-- **[Lucide Icons](https://lucide.dev/)** - Beautiful, consistent icon set
-- **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme implementation
-- **Responsive Design** - Mobile-first approach
+## 🔧 Cialdini's Principles
+
+- **Authority**: Demonstrated through skill presentation and project showcases
+- **Social Proof**: Portfolio of successful projects
+- **Liking**: Professional design with personal branding
+
+## 📱 Portfolio Sections
+
+1. **Landing Page**
+   - Hero section with archetype implementation
+   - Clear positioning statement
+   - Intuitive navigation
+
+2. **About Section**
+   - Professional story
+   - Skills and education
+   - Values statement
+
+3. **Projects Section**
+   - Three featured projects
+   - Interactive project cards
+   - Detailed project information
+
+4. **Contact Section**
+   - Styled contact form
+   - Professional information
+   - Clear call to action
+
+## 🛠️ Setup and Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## 📈 Project Requirements
+
+- [x] Next.js implementation
+- [x] Modern UI components
+- [x] Responsive design
+- [x] Consistent styling
+- [x] Archetypal branding
+- [x] Cialdini's principles
+- [x] Three featured projects
+- [x] Interactive elements
+- [x] Professional presentation
+
+## 🔗 Links
+
+- [Live Demo](https://portfolio-nurjahanj.vercel.app)
+- [GitHub Repository](https://github.com/NurjahanJ/is219-final)
 
 ## 📂 Project Structure
 
@@ -102,7 +159,6 @@ This portfolio fully embodies the Explorer brand archetype through:
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
 
 ## 🤝 Contributing
 
