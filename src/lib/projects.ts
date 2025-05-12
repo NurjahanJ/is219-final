@@ -11,7 +11,7 @@ export interface Project {
 // Export an array of projects
 export const projects: Project[] = [
   {
-    title: "Dashboard UI",
+    title: "Data Visualization Dashboard",
     description: "An interactive analytics dashboard that visualizes complex data through intuitive charts and responsive layouts. Built with Next.js and Tailwind CSS, this project features dynamic data filtering, dark/light mode, and real-time updates that adapt seamlessly across all devices.",
     tags: ["Next.js", "Tailwind CSS", "Chart.js", "Vercel"],
     github: "https://github.com/NurjahanJ/dasboard",
