@@ -321,7 +321,7 @@ export default function Home() {
                 </Link>
               </Button>
               
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-cyan-500/30 text-white hover:text-cyan-400 hover:bg-slate-900/50 hover:border-cyan-400/50">
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 py-6 text-base border-cyan-700/20 text-cyan-400 hover:text-cyan-300 hover:bg-slate-700 hover:border-cyan-700/40">
                 <Link href="/contact">Contact</Link>
               </Button>
             </div>
