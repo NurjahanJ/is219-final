@@ -75,12 +75,12 @@ export function MainNav() {
     <nav 
       className={`flex items-center justify-between w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'py-3 backdrop-blur-[10px] bg-[rgba(10,17,40,0.7)] border-b border-[#00FFE0]/20' 
+          ? 'py-3 backdrop-blur-[10px] bg-[rgba(10,17,40,0.7)] border-b border-cyan-700/20' 
           : 'py-5 backdrop-blur-[10px] bg-[rgba(10,17,40,0.6)]'
       }`} 
       style={{
-        boxShadow: scrolled ? '0 4px 20px rgba(0, 255, 224, 0.05)' : 'none',
-        borderBottom: '1px solid rgba(0, 255, 224, 0.15)'
+        boxShadow: scrolled ? '0 4px 20px rgba(34, 211, 238, 0.05)' : 'none',
+        borderBottom: '1px solid rgb(14, 116, 144, 0.2)'
       }}
       aria-label="Main navigation"
     >
