@@ -1,4 +1,4 @@
-# Explorer Portfolio - IS219 Final Project
+# Explorer Portfolio - Project Journal
 
 A modern, responsive portfolio website built with Next.js, showcasing technical skills and projects while implementing archetypal branding and Cialdini's principles of persuasion.
 
@@ -94,7 +94,7 @@ npm start
 ## 🔗 Links
 
 - [Live Demo](https://portfolio-nurjahanj.vercel.app)
-- [GitHub Repository](https://github.com/NurjahanJ/is219-final)
+- [GitHub Repository](https://github.com/NurjahanJ/project-journal)
 
 ## 📂 Project Structure
 
@@ -144,8 +144,8 @@ npm start
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/NurjahanJ/explorer-portfolio.git
-   cd explorer-portfolio
+   git clone https://github.com/NurjahanJ/project-journal.git
+   cd project-journal
    ```
 
 2. Install dependencies:
